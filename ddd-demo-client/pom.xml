@@ -9,7 +9,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>ddd-demo-client</artifactId>
-    <name>DddDemoApplication-client</name>
+    <name>ddd-demo-client</name>
     <dependencies>
         <dependency>
             <groupId>com.aliyun</groupId>

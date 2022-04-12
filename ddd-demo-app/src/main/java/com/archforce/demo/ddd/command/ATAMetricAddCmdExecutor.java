@@ -1,14 +1,14 @@
 package com.archforce.demo.ddd.command;
 
 import com.alibaba.cola.dto.Response;
-import com.archforce.demo.ddd.domain.tunnel.MetricTunnel;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.ATAMetric;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.ATAMetricItem;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.InfluenceMetric;
+import com.archforce.demo.ddd.domain.tunnel.MetricTunnel;
 import com.archforce.demo.ddd.domain.user.UserProfile;
 import com.archforce.demo.ddd.dto.ATAMetricAddCmd;
+import javax.annotation.Resource;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -17,10 +17,11 @@ import org.springframework.stereotype.Component;
  * @author Frank Zhang
  * @date 2019-03-01 11:42 AM
  */
+
 @Component
 public class ATAMetricAddCmdExecutor {
 
-    @Autowired
+    @Resource
     private MetricTunnel metricTunnel;
 
     public Response execute(ATAMetricAddCmd cmd) {

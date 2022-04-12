@@ -9,7 +9,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>ddd-demo-app</artifactId>
-    <name>DddDemoApplication-app</name>
+    <name>ddd-demo-app</name>
     <dependencies>
         <dependency>
             <groupId>com.archforce.demo</groupId>

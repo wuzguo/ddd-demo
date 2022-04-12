@@ -10,9 +10,9 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>start</artifactId>
+    <artifactId>ddd-demo-starter</artifactId>
     <packaging>jar</packaging>
-    <name>start</name>
+    <name>ddd-demo-starter</name>
 
     <dependencies>
         <dependency>

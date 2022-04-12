@@ -1,14 +1,14 @@
 package com.archforce.demo.ddd.command;
 
 import com.alibaba.cola.dto.Response;
-import com.archforce.demo.ddd.domain.tunnel.MetricTunnel;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.InfluenceMetric;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.PaperMetric;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.PaperMetricItem;
+import com.archforce.demo.ddd.domain.tunnel.MetricTunnel;
 import com.archforce.demo.ddd.domain.user.UserProfile;
 import com.archforce.demo.ddd.dto.PaperMetricAddCmd;
+import javax.annotation.Resource;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -20,7 +20,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class PaperMetricAddCmdExecutor {
 
-    @Autowired
+    @Resource
     private MetricTunnel metricTunnel;
 
     public Response execute(PaperMetricAddCmd cmd) {

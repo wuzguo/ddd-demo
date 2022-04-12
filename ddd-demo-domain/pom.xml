@@ -9,7 +9,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>ddd-demo-domain</artifactId>
-    <name>DddDemoApplication-domain</name>
+    <name>ddd-demo-domain</name>
     <dependencies>
         <!-- COLA Framework -->
         <dependency>

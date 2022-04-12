@@ -16,7 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class MetricTunnelTest {
 
-    @Autowired
+    @Resource
     private MetricMapper metricMapper;
 
     public void testCRUD() {

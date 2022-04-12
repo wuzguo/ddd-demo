@@ -7,6 +7,7 @@ import com.archforce.demo.ddd.tunnel.database.dataobject.MetricDO;
 /**
  * @author frankzhang
  */
+
 public class MetricConvertor {
 
     public static MetricDO toDataObject(MetricItem metricItem) {

@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class UserProfileTunnelTest {
 
-    @Autowired
+    @Resource
     private UserProfileMapper userProfileMapper;
 
     public void testCRUD() {

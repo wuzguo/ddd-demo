@@ -9,7 +9,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>ddd-demo-infrastructure</artifactId>
-    <name>DddDemoApplication-infrastructure</name>
+    <name>ddd-demo-infrastructure</name>
     <dependencies>
         <!--DIP here, Infrastructure depends on Domain-->
         <dependency>
