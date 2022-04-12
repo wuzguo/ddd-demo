@@ -2,10 +2,6 @@ package com.archforce.demo.ddd.command;
 
 import com.alibaba.cola.dto.Response;
 import com.alibaba.cola.exception.Assert;
-import com.alibaba.cola.logger.Logger;
-import com.alibaba.cola.logger.LoggerFactory;
-import com.archforce.demo.ddd.domain.tunnel.MetricTunnel;
-import com.archforce.demo.ddd.domain.tunnel.UserProfileTunnel;
 import com.archforce.demo.ddd.domain.metrics.SubMetric;
 import com.archforce.demo.ddd.domain.metrics.appquality.AppMetric;
 import com.archforce.demo.ddd.domain.metrics.appquality.AppQualityMetric;
@@ -13,17 +9,18 @@ import com.archforce.demo.ddd.domain.metrics.devquality.BugMetric;
 import com.archforce.demo.ddd.domain.metrics.devquality.DevQualityMetric;
 import com.archforce.demo.ddd.domain.metrics.techcontribution.ContributionMetric;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.InfluenceMetric;
+import com.archforce.demo.ddd.domain.tunnel.MetricTunnel;
+import com.archforce.demo.ddd.domain.tunnel.UserProfileTunnel;
 import com.archforce.demo.ddd.domain.user.UserProfile;
 import com.archforce.demo.ddd.dto.RefreshScoreCmd;
-import com.archforce.demo.ddd.event.handler.MetricItemCreatedHandler;
 import java.util.List;
 import javax.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+@Slf4j
 @Component
 public class RefreshScoreCmdExecutor {
-
-    private Logger logger = LoggerFactory.getLogger(MetricItemCreatedHandler.class);
 
     @Resource
     private UserProfileTunnel userProfileTunnel;

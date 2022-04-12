@@ -1,14 +1,20 @@
 package com.archforce.demo.ddd.domain.metrics.appquality;
 
-import com.alibaba.cola.logger.Logger;
-import com.alibaba.cola.logger.LoggerFactory;
 import com.archforce.demo.ddd.domain.metrics.MetricItem;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.extern.slf4j.Slf4j;
 
+
+/**
+ * @author Zak
+ */
+
+
+@Slf4j
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class AppMetricItem extends MetricItem {
-
-    private final static Logger logger = LoggerFactory.getLogger(AppMetricItem.class);
 
     /**
      * 应用名称
@@ -46,7 +52,7 @@ public class AppMetricItem extends MetricItem {
         score = deductScore(score, duplicatedMethodCount);
         score = deductScore(score, longMethodCount);
         score = deductScore(score, blockedCodeConductCount);
-        logger.debug("Calculated App score is " + score);
+        log.debug("Calculated App score is " + score);
         return score;
     }
 

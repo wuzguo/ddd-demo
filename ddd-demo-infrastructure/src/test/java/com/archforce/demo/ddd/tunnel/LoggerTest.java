@@ -1,7 +1,6 @@
 package com.archforce.demo.ddd.tunnel;
 
-import com.alibaba.cola.logger.Logger;
-import com.alibaba.cola.logger.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -15,14 +14,14 @@ import org.junit.Test;
  * @author Frank Zhang
  * @date 2019-02-28 1:21 PM
  */
-public class LoggerTest {
 
-    Logger logger = LoggerFactory.getLogger(LoggerTest.class);
+@Slf4j
+public class LoggerTest {
 
     @Test
     public void testLogger() {
-        logger.debug("I am printing DEBUG logger");
-        logger.info("I am printing INFO logger");
+        log.debug("I am printing DEBUG logger");
+        log.info("I am printing INFO logger");
         Assert.assertEquals(String.class, String.class);
     }
 }

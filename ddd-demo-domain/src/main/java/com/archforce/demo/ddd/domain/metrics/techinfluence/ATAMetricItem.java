@@ -1,10 +1,10 @@
 package com.archforce.demo.ddd.domain.metrics.techinfluence;
 
-import com.alibaba.cola.logger.Logger;
-import com.alibaba.cola.logger.LoggerFactory;
 import com.alibaba.fastjson.JSON;
 import com.archforce.demo.ddd.domain.metrics.MetricItem;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * ATAMetricItem 线上分享，ATA文章指标项
@@ -14,25 +14,57 @@ import lombok.Data;
  */
 
 
+@Slf4j
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class ATAMetricItem extends MetricItem {
 
-    private static Logger logger = LoggerFactory.getLogger(ATAMetricItem.class);
+    /**
+     * 作者
+     */
+    private String authorId;
 
-    private String authorId;//作者
-    private String title;//文章标题
-    private String url;//文章链接
-    private long thumbsUpCount;//点赞数
-    private long hitCount;//点击数
-    private long commentCount;//评论数
-    private long favoriteCount;//收藏数
+    /**
+     * 文章标题
+     */
+    private String title;
 
-    private static int HIT_STEP_SIZE = 100;
-    private static int THUMB_UPS_STEP_SIZE = 20;
-    private static int FAVORITE_STEP_SIZE = 15;
-    private static int COMMENT_STEP_SIZE = 3;
-    private static double STEP_SCORE = 0.25;
-    private static double BASIC_SCORE = 0.5;
+    /**
+     * 文章链接
+     */
+    private String url;
+
+    /**
+     * 点赞数
+     */
+    private long thumbsUpCount;
+
+    /**
+     * 点击数
+     */
+    private long hitCount;
+
+    /**
+     * 评论数
+     */
+    private long commentCount;
+
+    /**
+     * 收藏数
+     */
+    private long favoriteCount;
+
+    private static final int HIT_STEP_SIZE = 100;
+
+    private static final int THUMB_UPS_STEP_SIZE = 20;
+
+    private static final int FAVORITE_STEP_SIZE = 15;
+
+    private static final int COMMENT_STEP_SIZE = 3;
+
+    private static final double STEP_SCORE = 0.25;
+
+    private static final double BASIC_SCORE = 0.5;
 
 
     public ATAMetricItem() {
@@ -53,13 +85,13 @@ public class ATAMetricItem extends MetricItem {
 
     @Override
     public double calculateScore() {
-        logger.debug("calculate score for : " + this);
+        log.debug("calculate score for : " + this);
         double score = BASIC_SCORE;
         score = addScoreByHitCount(score);
         score = addScoreByThumbsupCount(score);
         score = addScoreByFavoriteCount(score);
         score = addScoreByCommentCount(score);
-        logger.debug("calculated score is : " + score);
+        log.debug("calculated score is : " + score);
         return score;
     }
 

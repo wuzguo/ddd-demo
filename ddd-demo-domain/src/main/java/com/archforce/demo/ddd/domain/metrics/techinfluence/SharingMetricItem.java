@@ -1,11 +1,11 @@
 package com.archforce.demo.ddd.domain.metrics.techinfluence;
 
-import com.alibaba.cola.logger.Logger;
-import com.alibaba.cola.logger.LoggerFactory;
 import com.alibaba.fastjson.JSON;
 import com.archforce.demo.ddd.domain.metrics.MetricItem;
 import java.util.Date;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * SharingMetricItem 技术线下分享指标项
@@ -13,14 +13,19 @@ import lombok.Data;
  * @author Frank Zhang
  * @date 2018-07-04 3:20 PM
  */
+
+
+@Slf4j
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class SharingMetricItem extends MetricItem {
 
-    private static Logger logger = LoggerFactory.getLogger(SharingMetricItem.class);
-
     private String sharingName;
+
     private SharingScope sharingScope;
+
     private Date sharingDate;
+
     private String sharingLink;
 
     public SharingMetricItem() {

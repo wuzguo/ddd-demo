@@ -1,11 +1,10 @@
 package com.archforce.demo.ddd.domain.metrics.techcontribution;
 
-import com.alibaba.cola.logger.Logger;
-import com.alibaba.cola.logger.LoggerFactory;
 import com.archforce.demo.ddd.domain.metrics.MainMetric;
 import com.archforce.demo.ddd.domain.metrics.MainMetricType;
 import com.archforce.demo.ddd.domain.user.UserProfile;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * ContributionMetric
@@ -13,10 +12,10 @@ import lombok.Data;
  * @author Frank Zhang
  * @date 2018-08-27 7:06 PM
  */
+
+@Slf4j
 @Data
 public class ContributionMetric extends MainMetric {
-
-    private static Logger logger = LoggerFactory.getLogger(ContributionMetric.class);
 
     private CodeReviewMetric codeReviewMetric;
     private RefactoringMetric refactoringMetric;
