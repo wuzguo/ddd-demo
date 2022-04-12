@@ -4,11 +4,11 @@ import com.alibaba.cola.dto.MultiResponse;
 import com.alibaba.cola.dto.Response;
 import com.alibaba.cola.dto.SingleResponse;
 import com.archforce.demo.ddd.api.IUserProfileService;
-import com.archforce.demo.ddd.command.RefreshScoreCmdExe;
-import com.archforce.demo.ddd.command.UserProfileAddCmdExe;
-import com.archforce.demo.ddd.command.UserProfileUpdateCmdExe;
-import com.archforce.demo.ddd.command.query.UserProfileGetQryExe;
-import com.archforce.demo.ddd.command.query.UserProfileListQryExe;
+import com.archforce.demo.ddd.command.RefreshScoreCmdExecutor;
+import com.archforce.demo.ddd.command.UserProfileAddCmdExecutor;
+import com.archforce.demo.ddd.command.UserProfileUpdateCmdExecutor;
+import com.archforce.demo.ddd.command.query.UserProfileGetQueryExecutor;
+import com.archforce.demo.ddd.command.query.UserProfileListQueryExecutor;
 import com.archforce.demo.ddd.dto.RefreshScoreCmd;
 import com.archforce.demo.ddd.dto.UserProfileAddCmd;
 import com.archforce.demo.ddd.dto.UserProfileGetQry;
@@ -28,42 +28,42 @@ import org.springframework.stereotype.Service;
 public class UserProfileServiceImpl implements IUserProfileService {
 
     @Resource
-    private UserProfileAddCmdExe userProfileAddCmdExe;
+    private UserProfileAddCmdExecutor userProfileAddCmdExecutor;
 
     @Resource
-    private UserProfileUpdateCmdExe userProfileUpdateCmdExe;
+    private UserProfileUpdateCmdExecutor userProfileUpdateCmdExecutor;
 
     @Resource
-    private RefreshScoreCmdExe refreshScoreCmdExe;
+    private RefreshScoreCmdExecutor refreshScoreCmdExecutor;
 
     @Resource
-    private UserProfileGetQryExe userProfileGetQryExe;
+    private UserProfileGetQueryExecutor userProfileGetQueryExecutor;
 
     @Resource
-    private UserProfileListQryExe userProfileListQryExe;
+    private UserProfileListQueryExecutor userProfileListQueryExecutor;
 
     @Override
     public Response addUserProfile(UserProfileAddCmd userProfileAddCmd) {
-        return userProfileAddCmdExe.execute(userProfileAddCmd);
+        return userProfileAddCmdExecutor.execute(userProfileAddCmd);
     }
 
     @Override
     public Response updateUserProfile(UserProfileUpdateCmd cmd) {
-        return userProfileUpdateCmdExe.execute(cmd);
+        return userProfileUpdateCmdExecutor.execute(cmd);
     }
 
     @Override
     public Response refreshScore(RefreshScoreCmd cmd) {
-        return refreshScoreCmdExe.execute(cmd);
+        return refreshScoreCmdExecutor.execute(cmd);
     }
 
     @Override
     public SingleResponse<UserProfileCO> getUserProfileBy(UserProfileGetQry qry) {
-        return userProfileGetQryExe.execute(qry);
+        return userProfileGetQueryExecutor.execute(qry);
     }
 
     @Override
     public MultiResponse<UserProfileCO> listUserProfileBy(UserProfileListQry qry) {
-        return userProfileListQryExe.execute(qry);
+        return userProfileListQueryExecutor.execute(qry);
     }
 }

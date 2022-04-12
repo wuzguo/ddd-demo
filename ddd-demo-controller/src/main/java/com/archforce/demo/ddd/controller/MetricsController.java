@@ -7,7 +7,6 @@ import com.archforce.demo.ddd.dto.ATAMetricAddCmd;
 import com.archforce.demo.ddd.dto.ATAMetricQry;
 import com.archforce.demo.ddd.dto.clientobject.ATAMetricCO;
 import javax.annotation.Resource;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

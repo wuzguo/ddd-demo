@@ -29,7 +29,7 @@
         FROM user_profile
     </sql>
 
-    <insert id="create" parameterType="com.archforce.demo.ddd.gatewayimpl.database.dataobject.UserProfileDO">
+    <insert id="create" parameterType="com.archforce.demo.ddd.tunnel.database.dataobject.UserProfileDO">
         INSERT INTO user_profile(
         <include refid="ALL_COLUMNS"/>
         ) VALUES (
@@ -60,7 +60,7 @@
           and IS_DELETED = 'n'
     </delete>
 
-    <select id="getByUserId" resultType="com.archforce.demo.ddd.gatewayimpl.database.dataobject.UserProfileDO"
+    <select id="getByUserId" resultType="com.archforce.demo.ddd.tunnel.database.dataobject.UserProfileDO"
       parameterType="map">
         SELECT *
         FROM user_profile
@@ -68,13 +68,13 @@
           and IS_DELETED = 'n' LIMIT 1
     </select>
 
-    <select id="listByDep" resultType="com.archforce.demo.ddd.gatewayimpl.database.dataobject.UserProfileDO"
+    <select id="listByDep" resultType="com.archforce.demo.ddd.tunnel.database.dataobject.UserProfileDO"
       parameterType="map">
         <include refid="COMMON_SELECT"/>
         WHERE dep like '#{dep}%' and IS_DELETED = 'n'
     </select>
 
-    <update id="update" parameterType="com.archforce.demo.ddd.gatewayimpl.database.dataobject.UserProfileDO">
+    <update id="update" parameterType="com.archforce.demo.ddd.tunnel.database.dataobject.UserProfileDO">
         UPDATE user_profile SET GMT_MODIFIED = now()
         <if test="userName != null">
             ,user_name = #{userName}

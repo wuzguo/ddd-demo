@@ -10,7 +10,7 @@
     </settings>
     <typeAliases>
         <!--项目DataObject对应的包名-->
-        <package name="com.archforce.demo.ddd.gatewayimpl.database.dataobject"/>
+        <package name="com.archforce.demo.ddd.tunnel.database.dataobject"/>
     </typeAliases>
     <mappers>
         <mapper resource="mybatis/MetricMapper.xml"></mapper>

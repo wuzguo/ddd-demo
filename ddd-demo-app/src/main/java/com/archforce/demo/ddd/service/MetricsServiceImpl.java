@@ -3,15 +3,15 @@ package com.archforce.demo.ddd.service;
 import com.alibaba.cola.dto.MultiResponse;
 import com.alibaba.cola.dto.Response;
 import com.archforce.demo.ddd.api.IMetricsService;
-import com.archforce.demo.ddd.command.ATAMetricAddCmdExe;
-import com.archforce.demo.ddd.command.CodeReviewMetricAddCmdExe;
-import com.archforce.demo.ddd.command.MetricDeleteCmdExe;
-import com.archforce.demo.ddd.command.MiscMetricAddCmdExe;
-import com.archforce.demo.ddd.command.PaperMetricAddCmdExe;
-import com.archforce.demo.ddd.command.PatentMetricAddCmdExe;
-import com.archforce.demo.ddd.command.RefactoringMetricAddCmdExe;
-import com.archforce.demo.ddd.command.SharingMetricAddCmdExe;
-import com.archforce.demo.ddd.command.query.ATAMetricQryExe;
+import com.archforce.demo.ddd.command.ATAMetricAddCmdExecutor;
+import com.archforce.demo.ddd.command.CodeReviewMetricAddCmdExecutor;
+import com.archforce.demo.ddd.command.MetricDeleteCmdExecutor;
+import com.archforce.demo.ddd.command.MiscMetricAddCmdExecutor;
+import com.archforce.demo.ddd.command.PaperMetricAddCmdExecutor;
+import com.archforce.demo.ddd.command.PatentMetricAddCmdExecutor;
+import com.archforce.demo.ddd.command.RefactoringMetricAddCmdExecutor;
+import com.archforce.demo.ddd.command.SharingMetricAddCmdExecutor;
+import com.archforce.demo.ddd.command.query.ATAMetricQueryExecutor;
 import com.archforce.demo.ddd.dto.ATAMetricAddCmd;
 import com.archforce.demo.ddd.dto.ATAMetricQry;
 import com.archforce.demo.ddd.dto.CodeReviewMetricAddCmd;
@@ -35,74 +35,74 @@ import org.springframework.stereotype.Service;
 public class MetricsServiceImpl implements IMetricsService {
 
     @Resource
-    private ATAMetricAddCmdExe ataMetricAddCmdExe;
+    private ATAMetricAddCmdExecutor ataMetricAddCmdExecutor;
 
     @Resource
-    private SharingMetricAddCmdExe sharingMetricAddCmdExe;
+    private SharingMetricAddCmdExecutor sharingMetricAddCmdExecutor;
 
     @Resource
-    private PatentMetricAddCmdExe patentMetricAddCmdExe;
+    private PatentMetricAddCmdExecutor patentMetricAddCmdExecutor;
 
     @Resource
-    private PaperMetricAddCmdExe paperMetricAddCmdExe;
+    private PaperMetricAddCmdExecutor paperMetricAddCmdExecutor;
 
     @Resource
-    private RefactoringMetricAddCmdExe refactoringMetricAddCmdExe;
+    private RefactoringMetricAddCmdExecutor refactoringMetricAddCmdExecutor;
 
     @Resource
-    private MiscMetricAddCmdExe miscMetricAddCmdExe;
+    private MiscMetricAddCmdExecutor miscMetricAddCmdExecutor;
 
     @Resource
-    private CodeReviewMetricAddCmdExe codeReviewMetricAddCmdExe;
+    private CodeReviewMetricAddCmdExecutor codeReviewMetricAddCmdExecutor;
 
     @Resource
-    private MetricDeleteCmdExe metricDeleteCmdExe;
+    private MetricDeleteCmdExecutor metricDeleteCmdExecutor;
 
     @Resource
-    private ATAMetricQryExe ataMetricQryExe;
+    private ATAMetricQueryExecutor ataMetricQueryExecutor;
 
     @Override
     public Response addATAMetric(ATAMetricAddCmd cmd) {
-        return ataMetricAddCmdExe.execute(cmd);
+        return ataMetricAddCmdExecutor.execute(cmd);
     }
 
     @Override
     public Response addSharingMetric(SharingMetricAddCmd cmd) {
-        return sharingMetricAddCmdExe.execute(cmd);
+        return sharingMetricAddCmdExecutor.execute(cmd);
     }
 
     @Override
     public Response addPatentMetric(PatentMetricAddCmd cmd) {
-        return patentMetricAddCmdExe.execute(cmd);
+        return patentMetricAddCmdExecutor.execute(cmd);
     }
 
     @Override
     public Response addPaperMetric(PaperMetricAddCmd cmd) {
-        return paperMetricAddCmdExe.execute(cmd);
+        return paperMetricAddCmdExecutor.execute(cmd);
     }
 
     @Override
     public Response addRefactoringMetric(RefactoringMetricAddCmd cmd) {
-        return refactoringMetricAddCmdExe.execute(cmd);
+        return refactoringMetricAddCmdExecutor.execute(cmd);
     }
 
     @Override
     public Response addMiscMetric(MiscMetricAddCmd cmd) {
-        return miscMetricAddCmdExe.execute(cmd);
+        return miscMetricAddCmdExecutor.execute(cmd);
     }
 
     @Override
     public Response addCodeReviewMetric(CodeReviewMetricAddCmd cmd) {
-        return codeReviewMetricAddCmdExe.execute(cmd);
+        return codeReviewMetricAddCmdExecutor.execute(cmd);
     }
 
     @Override
     public Response deleteMetric(MetricDeleteCmd cmd) {
-        return metricDeleteCmdExe.execute(cmd);
+        return metricDeleteCmdExecutor.execute(cmd);
     }
 
     @Override
     public MultiResponse<ATAMetricCO> listATAMetrics(ATAMetricQry ataMetricQry) {
-        return ataMetricQryExe.execute(ataMetricQry);
+        return ataMetricQueryExecutor.execute(ataMetricQry);
     }
 }

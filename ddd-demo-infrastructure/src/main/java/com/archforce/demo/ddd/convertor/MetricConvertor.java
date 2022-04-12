@@ -2,7 +2,7 @@ package com.archforce.demo.ddd.convertor;
 
 
 import com.archforce.demo.ddd.domain.metrics.MetricItem;
-import com.archforce.demo.ddd.gatewayimpl.database.dataobject.MetricDO;
+import com.archforce.demo.ddd.tunnel.database.dataobject.MetricDO;
 
 /**
  * @author frankzhang

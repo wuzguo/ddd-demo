@@ -23,7 +23,7 @@
     </sql>
 
     <insert id="create" useGeneratedKeys="true" keyProperty="id"
-      parameterType="com.archforce.demo.ddd.gatewayimpl.database.dataobject.MetricDO">
+      parameterType="com.archforce.demo.ddd.tunnel.database.dataobject.MetricDO">
         INSERT INTO metric(
         <include refid="ALL_COLUMNS"/>
         ) VALUES (
@@ -48,25 +48,25 @@
           and IS_DELETED = 'n'
     </delete>
 
-    <select id="listByUserId" resultType="com.archforce.demo.ddd.gatewayimpl.database.dataobject.MetricDO"
+    <select id="listByUserId" resultType="com.archforce.demo.ddd.tunnel.database.dataobject.MetricDO"
       parameterType="map">
         <include refid="COMMON_SELECT"/>
         WHERE user_id = #{userId} and IS_DELETED = 'n'
     </select>
 
-    <select id="listByMainMetric" resultType="com.archforce.demo.ddd.gatewayimpl.database.dataobject.MetricDO"
+    <select id="listByMainMetric" resultType="com.archforce.demo.ddd.tunnel.database.dataobject.MetricDO"
       parameterType="map">
         <include refid="COMMON_SELECT"/>
         WHERE user_id = #{userId} and main_metric= #{mainMetric} and IS_DELETED = 'n'
     </select>
 
-    <select id="listBySubMetric" resultType="com.archforce.demo.ddd.gatewayimpl.database.dataobject.MetricDO"
+    <select id="listBySubMetric" resultType="com.archforce.demo.ddd.tunnel.database.dataobject.MetricDO"
       parameterType="map">
         <include refid="COMMON_SELECT"/>
         WHERE user_id = #{userId} and sub_metric= #{subMetric} and IS_DELETED = 'n'
     </select>
 
-    <select id="getById" resultType="com.archforce.demo.ddd.gatewayimpl.database.dataobject.MetricDO"
+    <select id="getById" resultType="com.archforce.demo.ddd.tunnel.database.dataobject.MetricDO"
       parameterType="map">
         <include refid="COMMON_SELECT"/>
         WHERE id = #{id} and IS_DELETED = 'n'

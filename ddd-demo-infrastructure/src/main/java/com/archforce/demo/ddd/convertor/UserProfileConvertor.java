@@ -3,7 +3,7 @@ package com.archforce.demo.ddd.convertor;
 import com.archforce.demo.ddd.domain.user.Role;
 import com.archforce.demo.ddd.domain.user.UserProfile;
 import com.archforce.demo.ddd.dto.clientobject.UserProfileCO;
-import com.archforce.demo.ddd.gatewayimpl.database.dataobject.UserProfileDO;
+import com.archforce.demo.ddd.tunnel.database.dataobject.UserProfileDO;
 import org.springframework.beans.BeanUtils;
 
 public class UserProfileConvertor {
