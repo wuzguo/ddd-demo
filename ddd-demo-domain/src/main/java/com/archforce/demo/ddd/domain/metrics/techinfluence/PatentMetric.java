@@ -12,13 +12,13 @@ import com.archforce.demo.ddd.domain.metrics.SubMetricType;
 public class PatentMetric extends SubMetric {
 
     public PatentMetric() {
-        this.subMetricType = SubMetricType.Patent;
+        this.subMetricType = SubMetricType.PATENT;
     }
 
     public PatentMetric(MainMetric parent) {
         this.parent = parent;
         parent.addSubMetric(this);
-        this.subMetricType = SubMetricType.Patent;
+        this.subMetricType = SubMetricType.PATENT;
     }
 
     @Override

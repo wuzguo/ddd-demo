@@ -13,13 +13,13 @@ import com.archforce.demo.ddd.domain.metrics.SubMetricType;
 public class PaperMetric extends SubMetric {
 
     public PaperMetric() {
-        this.subMetricType = SubMetricType.Paper;
+        this.subMetricType = SubMetricType.PAPER;
     }
 
     public PaperMetric(MainMetric parent) {
         this.parent = parent;
         parent.addSubMetric(this);
-        this.subMetricType = SubMetricType.Paper;
+        this.subMetricType = SubMetricType.PAPER;
     }
 
     @Override

@@ -12,13 +12,13 @@ import com.archforce.demo.ddd.domain.metrics.SubMetricType;
 public class MiscMetric extends SubMetric {
 
     public MiscMetric() {
-        this.subMetricType = SubMetricType.Misc;
+        this.subMetricType = SubMetricType.MISC;
     }
 
     public MiscMetric(MainMetric parent) {
         this.parent = parent;
         parent.addSubMetric(this);
-        this.subMetricType = SubMetricType.Misc;
+        this.subMetricType = SubMetricType.MISC;
     }
 
     @Override

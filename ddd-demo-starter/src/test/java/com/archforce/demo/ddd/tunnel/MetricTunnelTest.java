@@ -22,7 +22,7 @@ public class MetricTunnelTest {
         String userId = "MetricTunnelTest" + Math.random();
         MetricDO metricDO = new MetricDO();
         metricDO.setMainMetric(MainMetricType.TECH_INFLUENCE.getCode());
-        metricDO.setSubMetric(SubMetricType.Refactoring.getMetricSubTypeCode());
+        metricDO.setSubMetric(SubMetricType.REFACTORING.getMetricSubTypeCode());
         metricDO.setUserId(userId);
         metricDO.setMetricItem("{\"patentName\": \"Leads重构\", \"level\": \"PROJECT\"}");
 

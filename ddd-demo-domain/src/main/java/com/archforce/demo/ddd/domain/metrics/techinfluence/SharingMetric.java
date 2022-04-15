@@ -13,13 +13,13 @@ import com.archforce.demo.ddd.domain.metrics.SubMetricType;
 public class SharingMetric extends SubMetric {
 
     public SharingMetric() {
-        this.subMetricType = SubMetricType.Sharing;
+        this.subMetricType = SubMetricType.SHARING;
     }
 
     public SharingMetric(MainMetric parent) {
         this.parent = parent;
         parent.addSubMetric(this);
-        this.subMetricType = SubMetricType.Sharing;
+        this.subMetricType = SubMetricType.SHARING;
     }
 
     @Override

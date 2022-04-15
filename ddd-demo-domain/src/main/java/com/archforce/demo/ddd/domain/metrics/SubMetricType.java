@@ -1,58 +1,97 @@
 package com.archforce.demo.ddd.domain.metrics;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 /**
  * SubMetricType
  *
  * @author Frank Zhang
  * @date 2018-08-27 4:54 PM
  */
+
+@Getter
+@AllArgsConstructor
 public enum SubMetricType {
 
-    LongMethod(MainMetricType.APP_QUALITY, "LongMethod", "超长方法"),
-    Cyclomatic(MainMetricType.APP_QUALITY, "Cyclomatic", "圈复杂度"),
-    Duplication(MainMetricType.APP_QUALITY, "Duplication", "代码重复度"),
+    /**
+     * 超长方法
+     */
+    LONG_METHOD(MainMetricType.APP_QUALITY, "LongMethod", "超长方法"),
 
-    App(MainMetricType.APP_QUALITY, "App", "App应用"),
+    /**
+     * 圈复杂度
+     */
+    CYCLOMATIC(MainMetricType.APP_QUALITY, "Cyclomatic", "圈复杂度"),
 
+    /**
+     * 代码重复度
+     */
+    DUPLICATION(MainMetricType.APP_QUALITY, "Duplication", "代码重复度"),
+
+    /**
+     * App应用
+     */
+    APP(MainMetricType.APP_QUALITY, "App", "App应用"),
+
+    /**
+     * ATA文章
+     */
     ATA(MainMetricType.TECH_INFLUENCE, "ATA", "ATA文章"),
-    Sharing(MainMetricType.TECH_INFLUENCE, "Sharing", "技术分享"),
-    Patent(MainMetricType.TECH_INFLUENCE, "Patent", "专利"),
-    Paper(MainMetricType.TECH_INFLUENCE, "Paper", "论文"),
 
-    CodeReview(MainMetricType.TECH_CONTRIBUTION, "CodeReview", "Code Review"),
-    Refactoring(MainMetricType.TECH_CONTRIBUTION, "Refactoring", "重构"),
-    Misc(MainMetricType.TECH_CONTRIBUTION, "Misc", "其他贡献"),
+    /**
+     * 技术分享
+     */
+    SHARING(MainMetricType.TECH_INFLUENCE, "Sharing", "技术分享"),
 
-    Bug(MainMetricType.DEV_QUALITY, "Bug", "提测Bug"),
-    Fault(MainMetricType.DEV_QUALITY, "Fault", "故障"),
-    ;
+    /**
+     * 专利
+     */
+    PATENT(MainMetricType.TECH_INFLUENCE, "Patent", "专利"),
 
-    //度量类型
-    private MainMetricType parentType;
+    /**
+     * 论文
+     */
+    PAPER(MainMetricType.TECH_INFLUENCE, "Paper", "论文"),
 
-    //度量项Code
-    private String metricSubTypeCode;
+    /**
+     * Code Review
+     */
+    CODE_REVIEW(MainMetricType.TECH_CONTRIBUTION, "CodeReview", "Code Review"),
 
-    //度量项中文名称
-    private String metricSubTypeName;
+    /**
+     * 重构
+     */
+    REFACTORING(MainMetricType.TECH_CONTRIBUTION, "Refactoring", "重构"),
 
-    private SubMetricType(MainMetricType parentType, String metricSubTypeCode, String metricSubTypeName) {
-        this.parentType = parentType;
-        this.metricSubTypeCode = metricSubTypeCode;
-        this.metricSubTypeName = metricSubTypeName;
-    }
+    /**
+     * 其他贡献
+     */
+    MISC(MainMetricType.TECH_CONTRIBUTION, "Misc", "其他贡献"),
 
-    public MainMetricType getParentType() {
-        return parentType;
-    }
+    /**
+     * 提测Bug
+     */
+    BUG(MainMetricType.DEV_QUALITY, "Bug", "提测Bug"),
 
-    public String getMetricSubTypeCode() {
-        return metricSubTypeCode;
-    }
+    /**
+     * 故障
+     */
+    FAULT(MainMetricType.DEV_QUALITY, "Fault", "故障");
 
-    public String getMetricSubTypeName() {
-        return metricSubTypeName;
-    }
+    /**
+     * 度量类型
+     */
+    private final MainMetricType parentType;
 
+    /**
+     * 度量项Code
+     */
+    private final String metricSubTypeCode;
+
+    /**
+     * 度量项中文名称
+     */
+    private final String metricSubTypeName;
 
 }

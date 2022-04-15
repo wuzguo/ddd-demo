@@ -6,7 +6,7 @@ import com.archforce.demo.ddd.domain.metrics.SubMetricType;
 public class AppMetric extends SubMetric {
 
     public AppMetric() {
-        this.subMetricType = SubMetricType.App;
+        this.subMetricType = SubMetricType.APP;
     }
 
     @Override

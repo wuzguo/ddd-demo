@@ -11,7 +11,7 @@ import com.archforce.demo.ddd.domain.enums.RoleEnum;
 public class BugMetric extends SubMetric {
 
     public BugMetric() {
-        this.subMetricType = SubMetricType.Bug;
+        this.subMetricType = SubMetricType.BUG;
     }
 
     @Override

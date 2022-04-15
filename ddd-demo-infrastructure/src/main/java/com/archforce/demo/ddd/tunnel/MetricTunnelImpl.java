@@ -92,13 +92,13 @@ public class MetricTunnelImpl implements MetricTunnel {
         metricDOList.forEach(metricDO -> {
             String json = metricDO.getMetricItem();
             switch (SubMetricType.valueOf(metricDO.getSubMetric())) {
-                case Refactoring:
+                case REFACTORING:
                     refactoringMetric.addMetricItem(RefactoringMetricItem.valueOf(json));
                     break;
-                case Misc:
+                case MISC:
                     miscMetric.addMetricItem(MiscMetricItem.valueOf(json));
                     break;
-                case CodeReview:
+                case CODE_REVIEW:
                     codeReviewMetric.addMetricItem(CodeReviewMetricItem.valueOf(json));
                     break;
                 default:
@@ -127,13 +127,13 @@ public class MetricTunnelImpl implements MetricTunnel {
                 case ATA:
                     ataMetric.addMetricItem(ATAMetricItem.valueOf(json));
                     break;
-                case Sharing:
+                case SHARING:
                     sharingMetric.addMetricItem(SharingMetricItem.valueOf(json));
                     break;
-                case Patent:
+                case PATENT:
                     patentMetric.addMetricItem(PatentMetricItem.valueOf(json));
                     break;
-                case Paper:
+                case PAPER:
                     paperMetric.addMetricItem(PaperMetricItem.valueOf(json));
                     break;
                 default:

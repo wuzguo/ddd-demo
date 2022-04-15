@@ -12,13 +12,13 @@ import com.archforce.demo.ddd.domain.metrics.SubMetricType;
 public class CodeReviewMetric extends SubMetric {
 
     public CodeReviewMetric() {
-        this.subMetricType = SubMetricType.CodeReview;
+        this.subMetricType = SubMetricType.CODE_REVIEW;
     }
 
     public CodeReviewMetric(MainMetric parent) {
         this.parent = parent;
         parent.addSubMetric(this);
-        this.subMetricType = SubMetricType.CodeReview;
+        this.subMetricType = SubMetricType.CODE_REVIEW;
     }
 
     @Override
