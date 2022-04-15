@@ -1,6 +1,7 @@
 package com.archforce.demo.ddd.dto.clientobject;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * SharingMetricCO
@@ -8,12 +9,17 @@ import lombok.Data;
  * @author Frank Zhang
  * @date 2019-03-02 4:55 PM
  */
+
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class SharingMetricCO extends AbstractMetricCO {
 
     public static final String TEAM_SCOPE = "TEAM";
+
     public static final String BU_SCOPE = "BU";
+
     public static final String ALIBABA_SCOPE = "ALIBABA";
+
     public static final String COMMUNITY_SCOPE = "COMMUNITY";
 
     /**

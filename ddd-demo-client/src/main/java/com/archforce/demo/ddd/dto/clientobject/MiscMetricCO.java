@@ -2,6 +2,7 @@ package com.archforce.demo.ddd.dto.clientobject;
 
 import javax.validation.constraints.NotEmpty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * MiscMetricCO
@@ -9,7 +10,9 @@ import lombok.Data;
  * @author Frank Zhang
  * @date 2019-03-04 10:58 AM
  */
+
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class MiscMetricCO extends AbstractMetricCO {
 
     /**
