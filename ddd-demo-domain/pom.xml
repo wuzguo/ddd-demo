@@ -19,7 +19,6 @@
         <dependency>
             <groupId>com.archforce.demo</groupId>
             <artifactId>ddd-demo-client</artifactId>
-            <version>${project.version}</version>
         </dependency>
         <!-- COLA Framework End-->
         <dependency>
@@ -40,7 +39,9 @@
         <pluginManagement>
             <plugins>
                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.8.2</version>
                     <configuration>
                         <skip>true</skip>
                     </configuration>

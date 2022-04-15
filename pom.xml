@@ -59,10 +59,45 @@
                 <type>jar</type>
             </dependency>
             <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>26.0-jre</version>
+            </dependency>
+            <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>2.1.4</version>
                 <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>com.archforce.demo</groupId>
+                <artifactId>ddd-demo-app</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.archforce.demo</groupId>
+                <artifactId>ddd-demo-client</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.archforce.demo</groupId>
+                <artifactId>ddd-demo-controller</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.archforce.demo</groupId>
+                <artifactId>ddd-demo-domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.archforce.demo</groupId>
+                <artifactId>ddd-demo-infrastructure</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.archforce.demo</groupId>
+                <artifactId>ddd-demo-starter</artifactId>
+                <version>${project.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

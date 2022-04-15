@@ -14,10 +14,18 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum RoleEnum {
     /**
-     * 开发，测试，非技术
+     * 开发
      */
     DEV("开发"),
+
+    /**
+     * 测试
+     */
     QA("测试"),
+
+    /**
+     * 非技术
+     */
     OTHER("非技术岗");
 
     /**
