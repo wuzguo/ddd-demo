@@ -2,7 +2,7 @@ package com.archforce.demo.ddd.domain.metrics.devquality;
 
 import com.archforce.demo.ddd.domain.metrics.SubMetric;
 import com.archforce.demo.ddd.domain.metrics.SubMetricType;
-import com.archforce.demo.ddd.domain.user.Role;
+import com.archforce.demo.ddd.domain.enums.RoleEnum;
 
 
 /**
@@ -21,7 +21,7 @@ public class BugMetric extends SubMetric {
 
     @Override
     public double calculateScore() {
-        if (metricOwner.getRole() == Role.OTHER) {
+        if (metricOwner.getRole() == RoleEnum.OTHER) {
             return 0;
         }
         return super.calculateScore();

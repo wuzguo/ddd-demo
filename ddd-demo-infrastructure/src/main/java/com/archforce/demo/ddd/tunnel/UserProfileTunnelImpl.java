@@ -4,7 +4,7 @@ import com.archforce.demo.ddd.convertor.UserProfileConvertor;
 import com.archforce.demo.ddd.domain.DomainFactory;
 import com.archforce.demo.ddd.domain.metrics.weight.WeightFactory;
 import com.archforce.demo.ddd.domain.tunnel.UserProfileTunnel;
-import com.archforce.demo.ddd.domain.user.Role;
+import com.archforce.demo.ddd.domain.enums.RoleEnum;
 import com.archforce.demo.ddd.domain.user.UserProfile;
 import com.archforce.demo.ddd.tunnel.database.UserProfileMapper;
 import com.archforce.demo.ddd.tunnel.database.dataobject.UserProfileDO;
@@ -47,7 +47,7 @@ public class UserProfileTunnelImpl implements UserProfileTunnel {
         }
         UserProfile userProfile = DomainFactory.getUserProfile();
         BeanUtils.copyProperties(userProfileDO, userProfile);
-        Role role = Role.valueOf(userProfileDO.getRole());
+        RoleEnum role = RoleEnum.valueOf(userProfileDO.getRole());
         userProfile.setRole(role);
         userProfile.setWeight(WeightFactory.get(role));
         return userProfile;

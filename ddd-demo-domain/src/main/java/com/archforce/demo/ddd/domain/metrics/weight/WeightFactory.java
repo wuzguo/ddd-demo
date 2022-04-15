@@ -1,14 +1,14 @@
 package com.archforce.demo.ddd.domain.metrics.weight;
 
-import com.archforce.demo.ddd.domain.user.Role;
+import com.archforce.demo.ddd.domain.enums.RoleEnum;
 
 public class WeightFactory {
 
-    public static Weight get(Role role) {
-        if (role == Role.DEV) {
+    public static Weight get(RoleEnum role) {
+        if (role == RoleEnum.DEV) {
             return DevWeight.singleton;
         }
-        if (role == Role.QA) {
+        if (role == RoleEnum.QA) {
             return QAWeight.singleton;
         }
         return OtherWeight.singleton;

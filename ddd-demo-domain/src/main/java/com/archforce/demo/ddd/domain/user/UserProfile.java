@@ -2,6 +2,7 @@ package com.archforce.demo.ddd.domain.user;
 
 import com.alibaba.cola.domain.EntityObject;
 import com.alibaba.cola.exception.Assert;
+import com.archforce.demo.ddd.domain.enums.RoleEnum;
 import com.archforce.demo.ddd.domain.metrics.appquality.AppQualityMetric;
 import com.archforce.demo.ddd.domain.metrics.devquality.DevQualityMetric;
 import com.archforce.demo.ddd.domain.metrics.techcontribution.ContributionMetric;
@@ -32,7 +33,7 @@ public class UserProfile extends EntityObject {
 
     private String dep;
 
-    private Role role;
+    private RoleEnum role;
 
     private String isManager;
 

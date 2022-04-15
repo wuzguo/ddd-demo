@@ -1,6 +1,6 @@
 package com.archforce.demo.ddd.convertor;
 
-import com.archforce.demo.ddd.domain.user.Role;
+import com.archforce.demo.ddd.domain.enums.RoleEnum;
 import com.archforce.demo.ddd.domain.user.UserProfile;
 import com.archforce.demo.ddd.dto.clientobject.UserProfileCO;
 import com.archforce.demo.ddd.tunnel.database.dataobject.UserProfileDO;
@@ -11,7 +11,7 @@ public class UserProfileConvertor {
     public static UserProfile toEntity(UserProfileCO userProfileCO) {
         UserProfile userProfile = new UserProfile();
         BeanUtils.copyProperties(userProfileCO, userProfile);
-        userProfile.setRole(Role.valueOf(userProfileCO.getRole()));
+        userProfile.setRole(RoleEnum.valueOf(userProfileCO.getRole()));
         return userProfile;
     }
 
