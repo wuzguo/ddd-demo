@@ -59,9 +59,9 @@ public class UserProfile extends EntityObject {
 
     private DevQualityMetric devQualityMetric;
 
-    private static double MAX_IMUM_SCORE = 100;
+    private static final double MAX_MUM_SCORE = 100;
 
-    private static double MIN_IMUM_SCORE = 0;
+    private static final double MIN_MUM_SCORE = 0;
 
     public void calculateScore() {
         calculateTechInfluenceScore();
@@ -99,10 +99,10 @@ public class UserProfile extends EntityObject {
     }
 
     private double round(double score) {
-        if (score > MAX_IMUM_SCORE) {
-            score = MAX_IMUM_SCORE;
-        } else if (score < MIN_IMUM_SCORE) {
-            score = MIN_IMUM_SCORE;
+        if (score > MAX_MUM_SCORE) {
+            score = MAX_MUM_SCORE;
+        } else if (score < MIN_MUM_SCORE) {
+            score = MIN_MUM_SCORE;
         }
         return score;
     }
