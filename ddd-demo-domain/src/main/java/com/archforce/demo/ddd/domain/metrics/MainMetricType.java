@@ -1,33 +1,44 @@
 package com.archforce.demo.ddd.domain.metrics;
 
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
 public enum MainMetricType {
+
+    /**
+     * 应用质量
+     */
     APP_QUALITY("app-quality", "应用质量"),
+
+    /**
+     * 技术影响力
+     */
     TECH_INFLUENCE("tech-influence", "技术影响力"),
+
+    /**
+     * 技术贡献
+     */
     TECH_CONTRIBUTION("tech-contribution", "技术贡献"),
+
+    /**
+     * 开发质量
+     */
     DEV_QUALITY("dev-quality", "开发质量");
 
-    private String metricCode;
-    private String metricName;
+    private final String code;
 
-    private MainMetricType(String metricCode, String metricName) {
-        this.metricCode = metricCode;
-        this.metricName = metricName;
-    }
+    private final String name;
 
-    public String getMetricCode() {
-        return metricCode;
-    }
 
-    public String getMetricName() {
-        return metricName;
-    }
-
-    public static MainMetricType of(String metricCode) {
-        if (metricCode == null) {
+    public static MainMetricType codeOf(String code) {
+        if (code == null) {
             return null;
         }
         for (MainMetricType metricMainType : MainMetricType.values()) {
-            if (metricCode.equals(metricMainType.metricCode)) {
+            if (code.equals(metricMainType.code)) {
                 return metricMainType;
             }
         }

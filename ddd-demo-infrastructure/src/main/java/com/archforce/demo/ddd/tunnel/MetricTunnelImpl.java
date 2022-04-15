@@ -81,7 +81,7 @@ public class MetricTunnelImpl implements MetricTunnel {
     @Override
     public List<SubMetric> listTechContributionMetric(String userId) {
         List<MetricDO> metricDOList = metricMapper.listByMainMetric(userId,
-            MainMetricType.TECH_CONTRIBUTION.getMetricCode());
+            MainMetricType.TECH_CONTRIBUTION.getCode());
         RefactoringMetric refactoringMetric = new RefactoringMetric();
         MiscMetric miscMetric = new MiscMetric();
         CodeReviewMetric codeReviewMetric = new CodeReviewMetric();
@@ -111,7 +111,7 @@ public class MetricTunnelImpl implements MetricTunnel {
     @Override
     public List<SubMetric> listTechInfluenceMetric(String userId) {
         List<MetricDO> metricDOList = metricMapper.listByMainMetric(userId,
-            MainMetricType.TECH_INFLUENCE.getMetricCode());
+            MainMetricType.TECH_INFLUENCE.getCode());
         ATAMetric ataMetric = new ATAMetric();
         SharingMetric sharingMetric = new SharingMetric();
         PatentMetric patentMetric = new PatentMetric();

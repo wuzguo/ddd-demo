@@ -16,7 +16,7 @@ public class AppMetric extends SubMetric {
 
     @Override
     public double calculateScore() {
-        int appCount = super.getMetricItemList().size();
+        int appCount = super.getMetricItems().size();
         if (appCount == 0) {
             return 0;
         }

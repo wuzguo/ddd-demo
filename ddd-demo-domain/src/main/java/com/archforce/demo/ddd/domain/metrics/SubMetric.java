@@ -23,7 +23,7 @@ public abstract class SubMetric extends Metric {
     protected MainMetric parent;
 
     @Getter
-    private List<MetricItem> metricItemList = new ArrayList<>();
+    private List<MetricItem> metricItems = new ArrayList<>();
 
     public SubMetric() {
 
@@ -38,10 +38,10 @@ public abstract class SubMetric extends Metric {
     /**
      * 添加度量项
      *
-     * @param metricItem
+     * @param metricItem {@link MetricItem}
      */
     public void addMetricItem(MetricItem metricItem) {
-        metricItemList.add(metricItem);
+        metricItems.add(metricItem);
     }
 
 
@@ -58,7 +58,7 @@ public abstract class SubMetric extends Metric {
     @Override
     public double calculateScore() {
         double subMetricScore = 0;
-        for (MetricItem metricItem : metricItemList) {
+        for (MetricItem metricItem : metricItems) {
             subMetricScore = subMetricScore + metricItem.calculateScore();
         }
         return subMetricScore;

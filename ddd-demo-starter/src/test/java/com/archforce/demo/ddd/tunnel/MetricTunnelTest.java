@@ -6,7 +6,6 @@ import com.archforce.demo.ddd.tunnel.database.MetricMapper;
 import com.archforce.demo.ddd.tunnel.database.dataobject.MetricDO;
 import java.util.List;
 import org.junit.Assert;
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * This is Tunnel Test, no need to mock, and no regression needed as well
@@ -22,7 +21,7 @@ public class MetricTunnelTest {
     public void testCRUD() {
         String userId = "MetricTunnelTest" + Math.random();
         MetricDO metricDO = new MetricDO();
-        metricDO.setMainMetric(MainMetricType.TECH_INFLUENCE.getMetricCode());
+        metricDO.setMainMetric(MainMetricType.TECH_INFLUENCE.getCode());
         metricDO.setSubMetric(SubMetricType.Refactoring.getMetricSubTypeCode());
         metricDO.setUserId(userId);
         metricDO.setMetricItem("{\"patentName\": \"Leads重构\", \"level\": \"PROJECT\"}");

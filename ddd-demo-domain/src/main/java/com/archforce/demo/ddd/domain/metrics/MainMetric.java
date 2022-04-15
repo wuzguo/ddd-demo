@@ -27,12 +27,12 @@ public abstract class MainMetric extends Metric {
 
     @Override
     public String getName() {
-        return metricMainType.getMetricName();
+        return metricMainType.getName();
     }
 
     @Override
     public String getCode() {
-        return metricMainType.getMetricCode();
+        return metricMainType.getCode();
     }
 
 

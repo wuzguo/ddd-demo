@@ -13,7 +13,7 @@ public interface Measurable extends Serializable {
     /**
      * 计算分数
      *
-     * @return
+     * @return {@link double}
      */
-    public double calculateScore();
+    double calculateScore();
 }
