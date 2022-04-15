@@ -53,8 +53,8 @@ public class UserProfileServiceImpl implements IUserProfileService {
     }
 
     @Override
-    public Response refreshScore(RefreshScoreCmd cmd) {
-        return refreshScoreCmdExecutor.execute(cmd);
+    public void refreshScore(RefreshScoreCmd cmd) {
+        refreshScoreCmdExecutor.execute(cmd);
     }
 
     @Override
@@ -63,7 +63,7 @@ public class UserProfileServiceImpl implements IUserProfileService {
     }
 
     @Override
-    public MultiResponse<UserProfileCO> listUserProfileBy(UserProfileListQry qry) {
+    public MultiResponse<UserProfileCO> listUserProfile(UserProfileListQry qry) {
         return userProfileListQueryExecutor.execute(qry);
     }
 }

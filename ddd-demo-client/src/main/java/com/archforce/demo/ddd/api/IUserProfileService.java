@@ -19,13 +19,43 @@ import com.archforce.demo.ddd.dto.clientobject.UserProfileCO;
  */
 public interface IUserProfileService {
 
+    /**
+     * 新增用户信息
+     *
+     * @param cmd {@link UserProfileAddCmd}
+     * @return {@link Response}
+     */
     Response addUserProfile(UserProfileAddCmd cmd);
 
+    /**
+     * 更新用户信息
+     *
+     * @param cmd {@link UserProfileUpdateCmd}
+     * @return {@link Response}
+     */
     Response updateUserProfile(UserProfileUpdateCmd cmd);
 
-    Response refreshScore(RefreshScoreCmd cmd);
+    /**
+     * 更新Score
+     *
+     * @param cmd {@link RefreshScoreCmd}
+     */
+    void refreshScore(RefreshScoreCmd cmd);
 
+    /**
+     * 获取用户信息
+     *
+     * @param qry {@link UserProfileGetQry}
+     * @return {@link UserProfileCO}
+     */
     SingleResponse<UserProfileCO> getUserProfileBy(UserProfileGetQry qry);
 
-    MultiResponse<UserProfileCO> listUserProfileBy(UserProfileListQry qry);
+
+    /**
+     * 查询用户信息
+     *
+     * @param qry {@link UserProfileListQry}
+     * @return {@link UserProfileCO}
+     */
+    MultiResponse<UserProfileCO> listUserProfile(UserProfileListQry qry);
 }
