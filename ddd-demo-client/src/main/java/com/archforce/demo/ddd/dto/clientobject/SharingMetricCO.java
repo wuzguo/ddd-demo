@@ -11,10 +11,10 @@ import lombok.Data;
 @Data
 public class SharingMetricCO extends AbstractMetricCO {
 
-    public final static String TEAM_SCOPE = "TEAM";
-    public final static String BU_SCOPE = "BU";
-    public final static String ALIBABA_SCOPE = "ALIBABA";
-    public final static String COMMUNITY_SCOPE = "COMMUNITY";
+    public static final String TEAM_SCOPE = "TEAM";
+    public static final String BU_SCOPE = "BU";
+    public static final String ALIBABA_SCOPE = "ALIBABA";
+    public static final String COMMUNITY_SCOPE = "COMMUNITY";
 
     /**
      * 分享标题
