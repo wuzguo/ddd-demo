@@ -21,7 +21,7 @@ public class UserProfileAddCmdExecutor {
     private UserProfileTunnel userProfileTunnel;
 
     public Response execute(UserProfileAddCmd cmd) {
-        UserProfile userProfile = UserProfileConvertor.toEntity(cmd.getUserProfileCO());
+        UserProfile userProfile = UserProfileConvertor.toEntity(cmd.getUserProfile());
         userProfileTunnel.create(userProfile);
         return Response.buildSuccess();
     }

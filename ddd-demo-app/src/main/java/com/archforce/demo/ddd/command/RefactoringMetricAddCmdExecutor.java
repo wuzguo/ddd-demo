@@ -26,11 +26,11 @@ public class RefactoringMetricAddCmdExecutor {
 
     public Response execute(RefactoringMetricAddCmd cmd) {
         RefactoringMetricItem refactoringMetricItem = new RefactoringMetricItem();
-        BeanUtils.copyProperties(cmd.getRefactoringMetricCO(), refactoringMetricItem);
+        BeanUtils.copyProperties(cmd.getRefactoringMetric(), refactoringMetricItem);
         refactoringMetricItem.setSubMetric(
-            new RefactoringMetric(new ContributionMetric(new UserProfile(cmd.getRefactoringMetricCO().getOwnerId()))));
+            new RefactoringMetric(new ContributionMetric(new UserProfile(cmd.getRefactoringMetric().getOwnerId()))));
         refactoringMetricItem.setRefactoringLevel(
-            RefactoringLevel.valueOf(cmd.getRefactoringMetricCO().getRefactoringLevel()));
+            RefactoringLevel.valueOf(cmd.getRefactoringMetric().getRefactoringLevel()));
         metricTunnel.save(refactoringMetricItem);
         return Response.buildSuccess();
     }

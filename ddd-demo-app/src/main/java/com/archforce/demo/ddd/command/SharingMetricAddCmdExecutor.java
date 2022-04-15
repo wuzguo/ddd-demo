@@ -26,10 +26,10 @@ public class SharingMetricAddCmdExecutor {
 
     public Response execute(SharingMetricAddCmd cmd) {
         SharingMetricItem sharingMetricItem = new SharingMetricItem();
-        BeanUtils.copyProperties(cmd.getSharingMetricCO(), sharingMetricItem);
+        BeanUtils.copyProperties(cmd.getSharingMetric(), sharingMetricItem);
         sharingMetricItem.setSubMetric(
-            new SharingMetric(new InfluenceMetric(new UserProfile(cmd.getSharingMetricCO().getOwnerId()))));
-        sharingMetricItem.setSharingScope(SharingScope.valueOf(cmd.getSharingMetricCO().getSharingScope()));
+            new SharingMetric(new InfluenceMetric(new UserProfile(cmd.getSharingMetric().getOwnerId()))));
+        sharingMetricItem.setSharingScope(SharingScope.valueOf(cmd.getSharingMetric().getSharingScope()));
         metricTunnel.save(sharingMetricItem);
         return Response.buildSuccess();
     }

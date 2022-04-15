@@ -14,5 +14,5 @@ import lombok.Data;
 public class UserProfileAddCmd extends CommonCommand {
 
     @NotNull
-    private UserProfileCO userProfileCO;
+    private UserProfileCO userProfile;
 }
