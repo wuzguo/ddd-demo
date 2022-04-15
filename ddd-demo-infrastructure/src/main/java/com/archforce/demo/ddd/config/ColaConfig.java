@@ -7,15 +7,17 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * Configuration for COLA framework
+ *
+ * @author Zak
  */
+
 @Configuration
-@ComponentScan(value = {"com.alibaba.cola", "DddDemoApplication"})
+@ComponentScan(value = {"com.alibaba.cola"})
 public class ColaConfig {
 
     @Bean(initMethod = "init")
     public SpringBootstrap bootstrap() {
-        SpringBootstrap bootstrap = new SpringBootstrap();
-        return bootstrap;
+        return new SpringBootstrap();
     }
 
 }
