@@ -12,7 +12,7 @@ import com.archforce.demo.ddd.dto.clientobject.UserProfileCO;
 
 
 /**
- * UserProfileServiceI
+ * 用户信息服务
  *
  * @author Frank Zhang
  * @date 2019-02-28 6:15 PM

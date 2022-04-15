@@ -14,7 +14,7 @@ import com.archforce.demo.ddd.dto.SharingMetricAddCmd;
 import com.archforce.demo.ddd.dto.clientobject.ATAMetricCO;
 
 /**
- * MetricsServiceI
+ * 指标服务
  *
  * @author Frank Zhang
  * @date 2019-03-01 10:06 AM
@@ -35,6 +35,7 @@ public interface IMetricsService {
 
     /**
      * 添加专利指标
+     *
      * @param cmd {@link PatentMetricAddCmd}
      * @return {@link Response}
      */

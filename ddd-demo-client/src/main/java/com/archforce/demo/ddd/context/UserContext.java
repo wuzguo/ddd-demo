@@ -3,7 +3,7 @@ package com.archforce.demo.ddd.context;
 import lombok.Data;
 
 /**
- * UserContext
+ * 用户上下文
  *
  * @author Frank Zhang
  * @date 2019-02-28 7:08 PM
