@@ -5,8 +5,8 @@ import com.alibaba.cola.dto.Response;
 import com.alibaba.cola.dto.SingleResponse;
 import com.archforce.demo.ddd.dto.RefreshScoreCmd;
 import com.archforce.demo.ddd.dto.UserProfileAddCmd;
-import com.archforce.demo.ddd.dto.UserProfileGetQry;
-import com.archforce.demo.ddd.dto.UserProfileListQry;
+import com.archforce.demo.ddd.dto.UserProfileGetQuery;
+import com.archforce.demo.ddd.dto.UserProfileListQuery;
 import com.archforce.demo.ddd.dto.UserProfileUpdateCmd;
 import com.archforce.demo.ddd.dto.clientobject.UserProfileCO;
 
@@ -45,17 +45,17 @@ public interface IUserProfileService {
     /**
      * 获取用户信息
      *
-     * @param qry {@link UserProfileGetQry}
+     * @param qry {@link UserProfileGetQuery}
      * @return {@link UserProfileCO}
      */
-    SingleResponse<UserProfileCO> getUserProfileBy(UserProfileGetQry qry);
+    SingleResponse<UserProfileCO> getUserProfileBy(UserProfileGetQuery qry);
 
 
     /**
      * 查询用户信息
      *
-     * @param qry {@link UserProfileListQry}
+     * @param qry {@link UserProfileListQuery}
      * @return {@link UserProfileCO}
      */
-    MultiResponse<UserProfileCO> listUserProfile(UserProfileListQry qry);
+    MultiResponse<UserProfileCO> listUserProfile(UserProfileListQuery qry);
 }

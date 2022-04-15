@@ -6,7 +6,7 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class UserProfileListQry extends CommonCommand {
+public class UserProfileListQuery extends CommonCommand {
 
     private String dep;
 }

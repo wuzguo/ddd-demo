@@ -4,7 +4,7 @@ import com.alibaba.cola.dto.MultiResponse;
 import com.alibaba.cola.dto.Response;
 import com.archforce.demo.ddd.api.IMetricsService;
 import com.archforce.demo.ddd.dto.ATAMetricAddCmd;
-import com.archforce.demo.ddd.dto.ATAMetricQry;
+import com.archforce.demo.ddd.dto.ATAMetricQuery;
 import com.archforce.demo.ddd.dto.clientobject.ATAMetricCO;
 import javax.annotation.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,9 +25,9 @@ public class MetricsController {
 
     @GetMapping(value = "/metrics/ata")
     public MultiResponse<ATAMetricCO> listATAMetrics(@RequestParam String ownerId) {
-        ATAMetricQry ataMetricQry = new ATAMetricQry();
-        ataMetricQry.setOwnerId(ownerId);
-        return metricsService.listATAMetrics(ataMetricQry);
+        ATAMetricQuery ataMetricQuery = new ATAMetricQuery();
+        ataMetricQuery.setOwnerId(ownerId);
+        return metricsService.listATAMetrics(ataMetricQuery);
     }
 
     @PostMapping(value = "/metrics/ata")

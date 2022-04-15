@@ -1,7 +1,7 @@
 package com.archforce.demo.ddd.command.query;
 
 import com.alibaba.cola.dto.MultiResponse;
-import com.archforce.demo.ddd.dto.UserProfileListQry;
+import com.archforce.demo.ddd.dto.UserProfileListQuery;
 import com.archforce.demo.ddd.dto.clientobject.UserProfileCO;
 import com.archforce.demo.ddd.tunnel.database.UserProfileMapper;
 import com.archforce.demo.ddd.tunnel.database.dataobject.UserProfileDO;
@@ -17,7 +17,7 @@ public class UserProfileListQueryExecutor {
     @Resource
     private UserProfileMapper userProfileMapper;
 
-    public MultiResponse<UserProfileCO> execute(UserProfileListQry qry) {
+    public MultiResponse<UserProfileCO> execute(UserProfileListQuery qry) {
         List<UserProfileDO> userProfileDOList = userProfileMapper.listByDep(qry.getDep());
         List<UserProfileCO> userProfileCOList = new ArrayList<>();
         userProfileDOList.forEach(userDO -> {

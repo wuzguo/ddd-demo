@@ -10,7 +10,7 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class ATAMetricQry extends CommonCommand {
+public class ATAMetricQuery extends CommonCommand {
 
     private String ownerId;
 }

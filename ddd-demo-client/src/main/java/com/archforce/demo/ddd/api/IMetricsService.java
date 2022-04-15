@@ -3,7 +3,7 @@ package com.archforce.demo.ddd.api;
 import com.alibaba.cola.dto.MultiResponse;
 import com.alibaba.cola.dto.Response;
 import com.archforce.demo.ddd.dto.ATAMetricAddCmd;
-import com.archforce.demo.ddd.dto.ATAMetricQry;
+import com.archforce.demo.ddd.dto.ATAMetricQuery;
 import com.archforce.demo.ddd.dto.CodeReviewMetricAddCmd;
 import com.archforce.demo.ddd.dto.MetricDeleteCmd;
 import com.archforce.demo.ddd.dto.MiscMetricAddCmd;
@@ -83,8 +83,8 @@ public interface IMetricsService {
     /**
      * 查询ATA统计指标
      *
-     * @param ataMetricQry {@link ATAMetricQry}
+     * @param ataMetricQuery {@link ATAMetricQuery}
      * @return {@link ATAMetricCO}
      */
-    MultiResponse<ATAMetricCO> listATAMetrics(ATAMetricQry ataMetricQry);
+    MultiResponse<ATAMetricCO> listATAMetrics(ATAMetricQuery ataMetricQuery);
 }

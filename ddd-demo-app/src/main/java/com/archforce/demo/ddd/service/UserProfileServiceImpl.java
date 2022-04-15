@@ -11,8 +11,8 @@ import com.archforce.demo.ddd.command.query.UserProfileGetQueryExecutor;
 import com.archforce.demo.ddd.command.query.UserProfileListQueryExecutor;
 import com.archforce.demo.ddd.dto.RefreshScoreCmd;
 import com.archforce.demo.ddd.dto.UserProfileAddCmd;
-import com.archforce.demo.ddd.dto.UserProfileGetQry;
-import com.archforce.demo.ddd.dto.UserProfileListQry;
+import com.archforce.demo.ddd.dto.UserProfileGetQuery;
+import com.archforce.demo.ddd.dto.UserProfileListQuery;
 import com.archforce.demo.ddd.dto.UserProfileUpdateCmd;
 import com.archforce.demo.ddd.dto.clientobject.UserProfileCO;
 import javax.annotation.Resource;
@@ -58,12 +58,12 @@ public class UserProfileServiceImpl implements IUserProfileService {
     }
 
     @Override
-    public SingleResponse<UserProfileCO> getUserProfileBy(UserProfileGetQry qry) {
+    public SingleResponse<UserProfileCO> getUserProfileBy(UserProfileGetQuery qry) {
         return userProfileGetQueryExecutor.execute(qry);
     }
 
     @Override
-    public MultiResponse<UserProfileCO> listUserProfile(UserProfileListQry qry) {
+    public MultiResponse<UserProfileCO> listUserProfile(UserProfileListQuery qry) {
         return userProfileListQueryExecutor.execute(qry);
     }
 }

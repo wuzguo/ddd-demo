@@ -4,6 +4,11 @@ import com.archforce.demo.ddd.domain.metrics.MainMetric;
 import com.archforce.demo.ddd.domain.metrics.MainMetricType;
 import com.archforce.demo.ddd.domain.user.UserProfile;
 
+/**
+ * @author Zak
+ */
+
+
 public class AppQualityMetric extends MainMetric {
 
     private AppMetric appMetric;

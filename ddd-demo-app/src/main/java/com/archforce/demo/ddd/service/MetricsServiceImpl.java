@@ -13,7 +13,7 @@ import com.archforce.demo.ddd.command.RefactoringMetricAddCmdExecutor;
 import com.archforce.demo.ddd.command.SharingMetricAddCmdExecutor;
 import com.archforce.demo.ddd.command.query.ATAMetricQueryExecutor;
 import com.archforce.demo.ddd.dto.ATAMetricAddCmd;
-import com.archforce.demo.ddd.dto.ATAMetricQry;
+import com.archforce.demo.ddd.dto.ATAMetricQuery;
 import com.archforce.demo.ddd.dto.CodeReviewMetricAddCmd;
 import com.archforce.demo.ddd.dto.MetricDeleteCmd;
 import com.archforce.demo.ddd.dto.MiscMetricAddCmd;
@@ -102,7 +102,7 @@ public class MetricsServiceImpl implements IMetricsService {
     }
 
     @Override
-    public MultiResponse<ATAMetricCO> listATAMetrics(ATAMetricQry ataMetricQry) {
-        return ataMetricQueryExecutor.execute(ataMetricQry);
+    public MultiResponse<ATAMetricCO> listATAMetrics(ATAMetricQuery ataMetricQuery) {
+        return ataMetricQueryExecutor.execute(ataMetricQuery);
     }
 }

@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class UserProfileGetQry extends CommonCommand {
+public class UserProfileGetQuery extends CommonCommand {
 
     private String userId;
 

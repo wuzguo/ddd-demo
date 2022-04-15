@@ -42,7 +42,9 @@ public class AppMetricItem extends MetricItem {
     private int blockedCodeConductCount;
 
     private static final int FULL_SCORE = 100;
+
     private static final int STEP_SIZE = 10;
+
     private static final int STEP_MINUS_SCORE = 1;
 
     @Override
@@ -52,7 +54,7 @@ public class AppMetricItem extends MetricItem {
         score = deductScore(score, duplicatedMethodCount);
         score = deductScore(score, longMethodCount);
         score = deductScore(score, blockedCodeConductCount);
-        log.debug("Calculated App score is " + score);
+        log.debug("calculated App score is " + score);
         return score;
     }
 
