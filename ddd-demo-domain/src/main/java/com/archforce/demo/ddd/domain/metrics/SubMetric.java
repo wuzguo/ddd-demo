@@ -18,7 +18,7 @@ import lombok.Getter;
 @EqualsAndHashCode(callSuper = true)
 public abstract class SubMetric extends Metric {
 
-    protected SubMetricType subMetricType;
+    protected SubMetricTypeEnum subMetricType;
 
     protected MainMetric parent;
 

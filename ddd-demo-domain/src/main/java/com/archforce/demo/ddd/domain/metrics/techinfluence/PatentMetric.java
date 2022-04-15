@@ -2,7 +2,7 @@ package com.archforce.demo.ddd.domain.metrics.techinfluence;
 
 import com.archforce.demo.ddd.domain.metrics.MainMetric;
 import com.archforce.demo.ddd.domain.metrics.SubMetric;
-import com.archforce.demo.ddd.domain.metrics.SubMetricType;
+import com.archforce.demo.ddd.domain.metrics.SubMetricTypeEnum;
 
 /**
  * 技术专利指标
@@ -12,13 +12,13 @@ import com.archforce.demo.ddd.domain.metrics.SubMetricType;
 public class PatentMetric extends SubMetric {
 
     public PatentMetric() {
-        this.subMetricType = SubMetricType.PATENT;
+        this.subMetricType = SubMetricTypeEnum.PATENT;
     }
 
     public PatentMetric(MainMetric parent) {
         this.parent = parent;
         parent.addSubMetric(this);
-        this.subMetricType = SubMetricType.PATENT;
+        this.subMetricType = SubMetricTypeEnum.PATENT;
     }
 
     @Override

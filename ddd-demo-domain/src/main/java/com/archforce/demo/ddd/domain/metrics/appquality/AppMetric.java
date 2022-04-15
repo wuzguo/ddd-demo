@@ -1,12 +1,12 @@
 package com.archforce.demo.ddd.domain.metrics.appquality;
 
 import com.archforce.demo.ddd.domain.metrics.SubMetric;
-import com.archforce.demo.ddd.domain.metrics.SubMetricType;
+import com.archforce.demo.ddd.domain.metrics.SubMetricTypeEnum;
 
 public class AppMetric extends SubMetric {
 
     public AppMetric() {
-        this.subMetricType = SubMetricType.APP;
+        this.subMetricType = SubMetricTypeEnum.APP;
     }
 
     @Override

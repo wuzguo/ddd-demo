@@ -2,7 +2,7 @@ package com.archforce.demo.ddd.command.query;
 
 import com.alibaba.cola.dto.MultiResponse;
 import com.alibaba.fastjson.JSON;
-import com.archforce.demo.ddd.domain.metrics.SubMetricType;
+import com.archforce.demo.ddd.domain.metrics.SubMetricTypeEnum;
 import com.archforce.demo.ddd.dto.ATAMetricQuery;
 import com.archforce.demo.ddd.dto.clientobject.ATAMetricCO;
 import com.archforce.demo.ddd.tunnel.database.MetricMapper;
@@ -20,7 +20,7 @@ public class ATAMetricQueryExecutor {
 
     public MultiResponse<ATAMetricCO> execute(ATAMetricQuery cmd) {
         List<MetricDO> metricDOList = metricMapper.listBySubMetric(cmd.getOwnerId(),
-            SubMetricType.ATA.getMetricSubTypeCode());
+            SubMetricTypeEnum.ATA.getMetricSubTypeCode());
         List<ATAMetricCO> ataMetricCOList = new ArrayList<>();
         metricDOList.forEach(metricDO -> {
             ATAMetricCO ataMetricCO = JSON.parseObject(metricDO.getMetricItem(), ATAMetricCO.class);

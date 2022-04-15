@@ -6,7 +6,7 @@ import com.archforce.demo.ddd.domain.tunnel.MetricTunnel;
 import com.archforce.demo.ddd.domain.metrics.MainMetricType;
 import com.archforce.demo.ddd.domain.metrics.MetricItem;
 import com.archforce.demo.ddd.domain.metrics.SubMetric;
-import com.archforce.demo.ddd.domain.metrics.SubMetricType;
+import com.archforce.demo.ddd.domain.metrics.SubMetricTypeEnum;
 import com.archforce.demo.ddd.domain.metrics.appquality.AppMetric;
 import com.archforce.demo.ddd.domain.metrics.appquality.AppMetricItem;
 import com.archforce.demo.ddd.domain.metrics.devquality.BugMetric;
@@ -91,7 +91,7 @@ public class MetricTunnelImpl implements MetricTunnel {
         subMetricList.add(codeReviewMetric);
         metricDOList.forEach(metricDO -> {
             String json = metricDO.getMetricItem();
-            switch (SubMetricType.valueOf(metricDO.getSubMetric())) {
+            switch (SubMetricTypeEnum.valueOf(metricDO.getSubMetric())) {
                 case REFACTORING:
                     refactoringMetric.addMetricItem(RefactoringMetricItem.valueOf(json));
                     break;
@@ -123,7 +123,7 @@ public class MetricTunnelImpl implements MetricTunnel {
         subMetricList.add(paperMetric);
         metricDOList.forEach(metricDO -> {
             String json = metricDO.getMetricItem();
-            switch (SubMetricType.valueOf(metricDO.getSubMetric())) {
+            switch (SubMetricTypeEnum.valueOf(metricDO.getSubMetric())) {
                 case ATA:
                     ataMetric.addMetricItem(ATAMetricItem.valueOf(json));
                     break;

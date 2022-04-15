@@ -12,7 +12,7 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum SubMetricType {
+public enum SubMetricTypeEnum {
 
     /**
      * 超长方法

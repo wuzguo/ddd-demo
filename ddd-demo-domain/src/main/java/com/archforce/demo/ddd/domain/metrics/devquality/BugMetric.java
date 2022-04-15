@@ -2,7 +2,7 @@ package com.archforce.demo.ddd.domain.metrics.devquality;
 
 import com.archforce.demo.ddd.domain.enums.RoleEnum;
 import com.archforce.demo.ddd.domain.metrics.SubMetric;
-import com.archforce.demo.ddd.domain.metrics.SubMetricType;
+import com.archforce.demo.ddd.domain.metrics.SubMetricTypeEnum;
 
 
 /**
@@ -12,7 +12,7 @@ import com.archforce.demo.ddd.domain.metrics.SubMetricType;
 public class BugMetric extends SubMetric {
 
     public BugMetric() {
-        this.subMetricType = SubMetricType.BUG;
+        this.subMetricType = SubMetricTypeEnum.BUG;
     }
 
     @Override

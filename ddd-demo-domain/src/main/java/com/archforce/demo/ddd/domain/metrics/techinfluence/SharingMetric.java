@@ -2,7 +2,7 @@ package com.archforce.demo.ddd.domain.metrics.techinfluence;
 
 import com.archforce.demo.ddd.domain.metrics.MainMetric;
 import com.archforce.demo.ddd.domain.metrics.SubMetric;
-import com.archforce.demo.ddd.domain.metrics.SubMetricType;
+import com.archforce.demo.ddd.domain.metrics.SubMetricTypeEnum;
 
 /**
  * SharingMetric 线下技术分享指标
@@ -13,13 +13,13 @@ import com.archforce.demo.ddd.domain.metrics.SubMetricType;
 public class SharingMetric extends SubMetric {
 
     public SharingMetric() {
-        this.subMetricType = SubMetricType.SHARING;
+        this.subMetricType = SubMetricTypeEnum.SHARING;
     }
 
     public SharingMetric(MainMetric parent) {
         this.parent = parent;
         parent.addSubMetric(this);
-        this.subMetricType = SubMetricType.SHARING;
+        this.subMetricType = SubMetricTypeEnum.SHARING;
     }
 
     @Override

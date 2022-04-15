@@ -3,13 +3,16 @@ package com.archforce.demo.ddd.domain.metrics.techcontribution;
 import com.alibaba.fastjson.JSON;
 import com.archforce.demo.ddd.domain.metrics.MetricItem;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * 设计指标度量项
  *
- * @author xueliang.sxl, alisa.hsh, xiangning.lxn
+ * @author zak
  */
+
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class MiscMetricItem extends MetricItem {
 
     /**
@@ -32,7 +35,8 @@ public class MiscMetricItem extends MetricItem {
      */
     private String codeUrl;
 
-    private static double OUTSTANDING_CONTRIBUTION_SCORE = 20;
+
+    private static final double OUTSTANDING_CONTRIBUTION_SCORE = 20;
 
     public MiscMetricItem() {
 
@@ -53,7 +57,7 @@ public class MiscMetricItem extends MetricItem {
     /**
      * 计算当前度量项分数
      *
-     * @return
+     * @return 分数
      */
     @Override
     public double calculateScore() {
