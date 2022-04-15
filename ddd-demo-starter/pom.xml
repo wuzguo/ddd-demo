@@ -18,7 +18,6 @@
         <dependency>
             <groupId>com.archforce.demo</groupId>
             <artifactId>ddd-demo-controller</artifactId>
-            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

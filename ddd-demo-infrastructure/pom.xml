@@ -15,7 +15,6 @@
         <dependency>
             <groupId>com.archforce.demo</groupId>
             <artifactId>ddd-demo-domain</artifactId>
-            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
