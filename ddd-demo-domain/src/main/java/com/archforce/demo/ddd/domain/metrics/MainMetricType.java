@@ -4,6 +4,10 @@ package com.archforce.demo.ddd.domain.metrics;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+/**
+ * @author Zak
+ */
+
 @Getter
 @AllArgsConstructor
 public enum MainMetricType {

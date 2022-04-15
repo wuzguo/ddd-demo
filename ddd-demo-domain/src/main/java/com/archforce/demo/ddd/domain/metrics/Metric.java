@@ -32,17 +32,22 @@ public abstract class Metric extends EntityObject implements Measurable {
     /**
      * 度量名称，用于UI显示
      *
-     * @return
+     * @return 名称
      */
     public abstract String getName();
 
     /**
      * 度量Code，用于数据库存储
      *
-     * @return
+     * @return code
      */
     public abstract String getCode();
 
+    /**
+     * 获取权重
+     *
+     * @return 权重值
+     */
     public abstract double getWeight();
 
     @Override
