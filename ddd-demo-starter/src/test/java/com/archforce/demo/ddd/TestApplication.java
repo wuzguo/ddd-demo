@@ -8,7 +8,7 @@ import org.springframework.context.annotation.FilterType;
 
 @ComponentScan(excludeFilters = {
     @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, value = {TestApplication.class})})
-@SpringBootApplication(scanBasePackages = {"com.alibaba.craftsman"})
+@SpringBootApplication(scanBasePackages = {"com.archforce.demo"})
 public class TestApplication {
 
     public static void main(String[] args) {

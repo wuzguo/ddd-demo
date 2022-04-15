@@ -2,8 +2,9 @@ package com.archforce.demo.ddd.tunnel;
 
 import com.archforce.demo.ddd.tunnel.database.UserProfileMapper;
 import com.archforce.demo.ddd.tunnel.database.dataobject.UserProfileDO;
+import javax.annotation.Resource;
 import org.junit.Assert;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 /**
  * This is Tunnel Test, no need to mock, and no regression needed as well
@@ -11,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @author Frank Zhang
  * @date 2019-02-27 5:31 PM
  */
+
+@SpringBootTest
 public class UserProfileTunnelTest {
 
     @Resource

@@ -5,7 +5,9 @@ import com.archforce.demo.ddd.domain.metrics.SubMetricType;
 import com.archforce.demo.ddd.tunnel.database.MetricMapper;
 import com.archforce.demo.ddd.tunnel.database.dataobject.MetricDO;
 import java.util.List;
+import javax.annotation.Resource;
 import org.junit.Assert;
+import org.springframework.boot.test.context.SpringBootTest;
 
 /**
  * This is Tunnel Test, no need to mock, and no regression needed as well
@@ -13,6 +15,8 @@ import org.junit.Assert;
  * @author Frank Zhang
  * @date 2019-02-27 2:33 PM
  */
+
+@SpringBootTest
 public class MetricTunnelTest {
 
     @Resource
