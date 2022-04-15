@@ -1,10 +1,17 @@
 package com.archforce.demo.ddd.dto;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+
+/**
+ * @author Zak
+ */
 
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class ATAMetricQry extends CommonCommand {
 
-    public String ownerId;
+    private String ownerId;
 }
 

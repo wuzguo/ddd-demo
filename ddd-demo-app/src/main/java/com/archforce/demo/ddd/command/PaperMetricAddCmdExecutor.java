@@ -25,10 +25,10 @@ public class PaperMetricAddCmdExecutor {
 
     public Response execute(PaperMetricAddCmd cmd) {
         PaperMetricItem paperMetricItem = new PaperMetricItem();
-        BeanUtils.copyProperties(cmd.getPaperMetricCO(), paperMetricItem);
+        BeanUtils.copyProperties(cmd.getPaperMetric(), paperMetricItem);
         paperMetricItem.setSubMetric(
-            new PaperMetric(new InfluenceMetric(new UserProfile(cmd.getPaperMetricCO().getOwnerId()))));
-        paperMetricItem.setMetricOwner(new UserProfile(cmd.getPaperMetricCO().getOwnerId()));
+            new PaperMetric(new InfluenceMetric(new UserProfile(cmd.getPaperMetric().getOwnerId()))));
+        paperMetricItem.setMetricOwner(new UserProfile(cmd.getPaperMetric().getOwnerId()));
         metricTunnel.save(paperMetricItem);
 
         return Response.buildSuccess();

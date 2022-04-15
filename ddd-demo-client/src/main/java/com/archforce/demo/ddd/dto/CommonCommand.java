@@ -8,17 +8,19 @@ import com.alibaba.cola.dto.Command;
  * @author Frank Zhang
  * @date 2019-02-28 7:18 PM
  */
+
 public class CommonCommand extends Command {
 
-    private String operater;
+    private String operator;
+
     private boolean needsOperator;
 
-    public String getOperater() {
-        return this.operater;
+    public String getOperator() {
+        return this.operator;
     }
 
-    public void setOperater(String operater) {
-        this.operater = operater;
+    public void setOperator(String operator) {
+        this.operator = operator;
         needsOperator = true;
     }
 

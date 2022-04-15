@@ -25,7 +25,7 @@ public class ContextInterceptorTest {
     public void testOperatorContext() {
         UserProfileAddCmd userProfileAddCmd = new UserProfileAddCmd();
         userProfileAddCmd.setUserProfile(new UserProfileCO());
-        userProfileAddCmd.setOperater("Frank");
+        userProfileAddCmd.setOperator("Frank");
 
 //        ContextInterceptor contextInterceptor = new ContextInterceptor();
 //        contextInterceptor.preIntercept(userProfileAddCmd);

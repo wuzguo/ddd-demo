@@ -26,10 +26,10 @@ public class PatentMetricAddCmdExecutor {
 
     public Response execute(PatentMetricAddCmd cmd) {
         PatentMetricItem patentMetricItem = new PatentMetricItem();
-        BeanUtils.copyProperties(cmd.getPatentMetricCO(), patentMetricItem);
+        BeanUtils.copyProperties(cmd.getPatentMetric(), patentMetricItem);
         patentMetricItem.setSubMetric(
-            new PatentMetric(new InfluenceMetric(new UserProfile(cmd.getPatentMetricCO().getOwnerId()))));
-        patentMetricItem.setAuthorType(AuthorType.valueOf(cmd.getPatentMetricCO().getAuthorType()));
+            new PatentMetric(new InfluenceMetric(new UserProfile(cmd.getPatentMetric().getOwnerId()))));
+        patentMetricItem.setAuthorType(AuthorType.valueOf(cmd.getPatentMetric().getAuthorType()));
         metricTunnel.save(patentMetricItem);
         return Response.buildSuccess();
     }

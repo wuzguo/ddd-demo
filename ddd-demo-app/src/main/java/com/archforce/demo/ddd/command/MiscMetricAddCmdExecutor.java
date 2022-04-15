@@ -25,9 +25,9 @@ public class MiscMetricAddCmdExecutor {
 
     public Response execute(MiscMetricAddCmd cmd) {
         MiscMetricItem miscMetricItem = new MiscMetricItem();
-        BeanUtils.copyProperties(cmd.getMiscMetricCO(), miscMetricItem);
+        BeanUtils.copyProperties(cmd.getMiscMetric(), miscMetricItem);
         miscMetricItem.setSubMetric(
-            new MiscMetric(new ContributionMetric(new UserProfile(cmd.getMiscMetricCO().getOwnerId()))));
+            new MiscMetric(new ContributionMetric(new UserProfile(cmd.getMiscMetric().getOwnerId()))));
         metricTunnel.save(miscMetricItem);
         return Response.buildSuccess();
     }

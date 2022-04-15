@@ -3,6 +3,7 @@ package com.archforce.demo.ddd.dto;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Positive;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * CodeReviewMetricAddCmd
@@ -10,7 +11,9 @@ import lombok.Data;
  * @author Frank Zhang
  * @date 2019-03-01 10:09 AM
  */
+
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class CodeReviewMetricAddCmd extends CommonCommand {
 
     @NotEmpty
