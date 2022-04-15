@@ -26,9 +26,9 @@ public class ATAMetricAddCmdExecutor {
 
     public Response execute(ATAMetricAddCmd cmd) {
         ATAMetricItem ataMetricItem = new ATAMetricItem();
-        BeanUtils.copyProperties(cmd.getAtaMetricCO(), ataMetricItem);
+        BeanUtils.copyProperties(cmd.getAtaMetric(), ataMetricItem);
         ataMetricItem.setSubMetric(
-            new ATAMetric(new InfluenceMetric(new UserProfile(cmd.getAtaMetricCO().getOwnerId()))));
+            new ATAMetric(new InfluenceMetric(new UserProfile(cmd.getAtaMetric().getOwnerId()))));
         metricTunnel.save(ataMetricItem);
         return Response.buildSuccess();
     }
