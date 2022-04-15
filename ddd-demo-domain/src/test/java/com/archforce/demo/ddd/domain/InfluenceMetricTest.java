@@ -8,7 +8,7 @@ import com.archforce.demo.ddd.domain.metrics.techinfluence.PatentMetric;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.PatentMetricItem;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.SharingMetric;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.SharingMetricItem;
-import com.archforce.demo.ddd.domain.metrics.techinfluence.SharingScope;
+import com.archforce.demo.ddd.domain.metrics.techinfluence.SharingScopeEnum;
 import com.archforce.demo.ddd.domain.metrics.weight.DevWeight;
 import com.archforce.demo.ddd.domain.metrics.weight.QAWeight;
 import com.archforce.demo.ddd.domain.user.UserProfile;
@@ -51,9 +51,9 @@ public class InfluenceMetricTest {
             new PatentMetricItem("patentName", "patentDesc", "patentNo", "sharingLink", AuthorType.OTHER_AUTHOR));
 
         SharingMetric sharingMetric = new SharingMetric(influenceMetric);
-        sharingMetric.addMetricItem(new SharingMetricItem("title", SharingScope.TEAM, new Date(), "sharingLink"));
-        sharingMetric.addMetricItem(new SharingMetricItem("title", SharingScope.BU, new Date(), "sharingLink"));
-        sharingMetric.addMetricItem(new SharingMetricItem("title", SharingScope.ALIBABA, new Date(), "sharingLink"));
-        sharingMetric.addMetricItem(new SharingMetricItem("title", SharingScope.COMMUNITY, new Date(), "sharingLink"));
+        sharingMetric.addMetricItem(new SharingMetricItem("title", SharingScopeEnum.TEAM, new Date(), "sharingLink"));
+        sharingMetric.addMetricItem(new SharingMetricItem("title", SharingScopeEnum.BU, new Date(), "sharingLink"));
+        sharingMetric.addMetricItem(new SharingMetricItem("title", SharingScopeEnum.GROUP, new Date(), "sharingLink"));
+        sharingMetric.addMetricItem(new SharingMetricItem("title", SharingScopeEnum.COMMUNITY, new Date(), "sharingLink"));
     }
 }

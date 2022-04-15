@@ -5,7 +5,7 @@ import com.archforce.demo.ddd.domain.tunnel.MetricTunnel;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.InfluenceMetric;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.SharingMetric;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.SharingMetricItem;
-import com.archforce.demo.ddd.domain.metrics.techinfluence.SharingScope;
+import com.archforce.demo.ddd.domain.metrics.techinfluence.SharingScopeEnum;
 import com.archforce.demo.ddd.domain.user.UserProfile;
 import com.archforce.demo.ddd.dto.SharingMetricAddCmd;
 import javax.annotation.Resource;
@@ -29,7 +29,7 @@ public class SharingMetricAddCmdExecutor {
         BeanUtils.copyProperties(cmd.getSharingMetric(), sharingMetricItem);
         sharingMetricItem.setSubMetric(
             new SharingMetric(new InfluenceMetric(new UserProfile(cmd.getSharingMetric().getOwnerId()))));
-        sharingMetricItem.setSharingScope(SharingScope.valueOf(cmd.getSharingMetric().getSharingScope()));
+        sharingMetricItem.setSharingScope(SharingScopeEnum.valueOf(cmd.getSharingMetric().getSharingScope()));
         metricTunnel.save(sharingMetricItem);
         return Response.buildSuccess();
     }

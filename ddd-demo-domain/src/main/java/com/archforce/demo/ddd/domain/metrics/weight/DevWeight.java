@@ -5,7 +5,7 @@ package com.archforce.demo.ddd.domain.metrics.weight;
  */
 public class DevWeight extends Weight {
 
-    public static DevWeight singleton = new DevWeight();
+    public static final DevWeight singleton = new DevWeight();
 
     @Override
     public double getAppQualityWeight() {

@@ -8,6 +8,7 @@ import com.alibaba.fastjson.serializer.PropertyFilter;
  * @author Frank Zhang
  * @date 2019-03-02 10:53 PM
  */
+
 public class JSONPropertyFilter implements PropertyFilter {
 
     public static JSONPropertyFilter singleton = new JSONPropertyFilter();

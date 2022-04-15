@@ -22,7 +22,7 @@ public class SharingMetricItem extends MetricItem {
 
     private String sharingName;
 
-    private SharingScope sharingScope;
+    private SharingScopeEnum sharingScope;
 
     private Date sharingDate;
 
@@ -32,7 +32,7 @@ public class SharingMetricItem extends MetricItem {
 
     }
 
-    public SharingMetricItem(String sharingName, SharingScope sharingScope, Date sharingDate, String url) {
+    public SharingMetricItem(String sharingName, SharingScopeEnum sharingScope, Date sharingDate, String url) {
         this.sharingName = sharingName;
         this.sharingScope = sharingScope;
         this.sharingDate = sharingDate;

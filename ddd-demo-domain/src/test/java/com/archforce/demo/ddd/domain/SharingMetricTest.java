@@ -3,7 +3,7 @@ package com.archforce.demo.ddd.domain;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.InfluenceMetric;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.SharingMetric;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.SharingMetricItem;
-import com.archforce.demo.ddd.domain.metrics.techinfluence.SharingScope;
+import com.archforce.demo.ddd.domain.metrics.techinfluence.SharingScopeEnum;
 import com.archforce.demo.ddd.domain.user.UserProfile;
 import java.util.Date;
 import org.junit.Assert;
@@ -20,10 +20,10 @@ public class SharingMetricTest {
     @Test
     public void testSharingMetric() {
         SharingMetric sharingMetric = new SharingMetric(new InfluenceMetric(new UserProfile()));
-        sharingMetric.addMetricItem(new SharingMetricItem("title", SharingScope.TEAM, new Date(), "sharingLink"));
-        sharingMetric.addMetricItem(new SharingMetricItem("title", SharingScope.BU, new Date(), "sharingLink"));
-        sharingMetric.addMetricItem(new SharingMetricItem("title", SharingScope.ALIBABA, new Date(), "sharingLink"));
-        sharingMetric.addMetricItem(new SharingMetricItem("title", SharingScope.COMMUNITY, new Date(), "sharingLink"));
+        sharingMetric.addMetricItem(new SharingMetricItem("title", SharingScopeEnum.TEAM, new Date(), "sharingLink"));
+        sharingMetric.addMetricItem(new SharingMetricItem("title", SharingScopeEnum.BU, new Date(), "sharingLink"));
+        sharingMetric.addMetricItem(new SharingMetricItem("title", SharingScopeEnum.GROUP, new Date(), "sharingLink"));
+        sharingMetric.addMetricItem(new SharingMetricItem("title", SharingScopeEnum.COMMUNITY, new Date(), "sharingLink"));
 
         Assert.assertEquals(92, sharingMetric.calculateScore(), 0.01);
     }

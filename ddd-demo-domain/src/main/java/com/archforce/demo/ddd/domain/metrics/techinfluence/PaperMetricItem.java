@@ -3,6 +3,7 @@ package com.archforce.demo.ddd.domain.metrics.techinfluence;
 import com.alibaba.fastjson.JSON;
 import com.archforce.demo.ddd.domain.metrics.MetricItem;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * PaperMetricItem
@@ -10,12 +11,17 @@ import lombok.Data;
  * @author Frank Zhang
  * @date 2018-09-20 3:26 PM
  */
+
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class PaperMetricItem extends MetricItem {
 
     private String paperName;
+
     private String paperDesc;
+
     private String magazine;
+
     private String paperLink;
 
     private static final double PAPER_SCORE = 10;

@@ -3,19 +3,26 @@ package com.archforce.demo.ddd.domain.metrics.techinfluence;
 import com.alibaba.fastjson.JSON;
 import com.archforce.demo.ddd.domain.metrics.MetricItem;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * 技术创新指标项
  *
  * @author xueliang.sxl
  */
+
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class PatentMetricItem extends MetricItem {
 
     private String patentName;
+
     private String patentDesc;
+
     private String patentNo;
+
     private String patentUrl;
+
     private AuthorType authorType;
 
     public PatentMetricItem() {

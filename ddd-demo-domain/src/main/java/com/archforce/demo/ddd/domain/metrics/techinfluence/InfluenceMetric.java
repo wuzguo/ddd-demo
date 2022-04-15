@@ -4,6 +4,7 @@ import com.archforce.demo.ddd.domain.metrics.MainMetric;
 import com.archforce.demo.ddd.domain.metrics.MainMetricType;
 import com.archforce.demo.ddd.domain.user.UserProfile;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * InfluenceMetric 影响力指标
@@ -11,12 +12,17 @@ import lombok.Data;
  * @author Frank Zhang
  * @date 2018-07-04 1:24 PM
  */
+
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class InfluenceMetric extends MainMetric {
 
     private ATAMetric ataMetric;
+
     private PatentMetric patentMetric;
+
     private SharingMetric sharingMetric;
+
     private PaperMetric paperMetric;
 
     public InfluenceMetric(UserProfile metricOwner) {
