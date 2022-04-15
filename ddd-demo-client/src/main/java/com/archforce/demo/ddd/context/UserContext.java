@@ -8,16 +8,32 @@ import lombok.Data;
  * @author Frank Zhang
  * @date 2019-02-28 7:08 PM
  */
+
 @Data
 public class UserContext {
 
+    /**
+     * 操作符
+     */
     private String operator;
 
-    private String loginUserId;
+    /**
+     * 用户ID
+     */
+    private String userId;
 
-    private String loginUserName;
+    /**
+     * 用户名
+     */
+    private String userName;
 
-    private String loginUserRole;
+    /**
+     * 用户角色
+     */
+    private String userRole;
 
-    private String loginUserPrivilege;
+    /**
+     * 用户权限
+     */
+    private String userPrivilege;
 }
