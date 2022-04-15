@@ -36,7 +36,7 @@ public class RefreshScoreCmdExecutor {
     }
 
     private UserProfile getUserProfile(RefreshScoreCmd cmd) {
-        UserProfile userProfile = userProfileTunnel.getByUserId(cmd.getUserId());
+        UserProfile userProfile = userProfileTunnel.getProfile(cmd.getUserId());
         Assert.notNull(userProfile, "There is no User Profile for " + cmd.getUserId() + " to update");
         return userProfile;
     }
@@ -63,13 +63,13 @@ public class RefreshScoreCmdExecutor {
 
     private void loadContributionMetrics(UserProfile userProfile) {
         ContributionMetric contributionMetric = new ContributionMetric(userProfile);
-        List<SubMetric> subMetricList = metricTunnel.listByTechContribution(userProfile.getUserId());
+        List<SubMetric> subMetricList = metricTunnel.listTechContributionMetric(userProfile.getUserId());
         subMetricList.forEach(subMetric -> subMetric.setParent(contributionMetric));
     }
 
     private void loadInfluenceMetric(UserProfile userProfile) {
         InfluenceMetric influenceMetric = new InfluenceMetric(userProfile);
-        List<SubMetric> subMetricList = metricTunnel.listByTechInfluence(userProfile.getUserId());
+        List<SubMetric> subMetricList = metricTunnel.listTechInfluenceMetric(userProfile.getUserId());
         subMetricList.forEach(subMetric -> subMetric.setParent(influenceMetric));
     }
 

@@ -11,9 +11,23 @@ import com.archforce.demo.ddd.domain.user.UserProfile;
 
 public interface UserProfileTunnel {
 
+    /**
+     * 创建用户信息
+     *
+     * @param userProfile {@link UserProfile}
+     */
     void create(UserProfile userProfile);
 
+    /**
+     * 更新用户信息
+     *
+     * @param userProfile {@link UserProfile}
+     */
     void update(UserProfile userProfile);
 
-    UserProfile getByUserId(String userId);
+    /**
+     * @param userId 用户ID
+     * @return {@link UserProfile}
+     */
+    UserProfile getProfile(String userId);
 }

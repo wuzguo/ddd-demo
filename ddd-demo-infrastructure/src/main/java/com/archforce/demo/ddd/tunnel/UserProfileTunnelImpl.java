@@ -14,7 +14,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
 /**
- * UserProfileGatewayImpl
+ * 用户信息通道实现类
  *
  * @author Frank Zhang
  * @date 2020-07-02 12:32 PM
@@ -39,7 +39,7 @@ public class UserProfileTunnelImpl implements UserProfileTunnel {
     }
 
     @Override
-    public UserProfile getByUserId(String userId) {
+    public UserProfile getProfile(String userId) {
         UserProfileDO userProfileDO = userProfileMapper.getByUserId(userId);
         if (userProfileDO == null) {
             log.warn("There is no UserProfile for : " + userId);

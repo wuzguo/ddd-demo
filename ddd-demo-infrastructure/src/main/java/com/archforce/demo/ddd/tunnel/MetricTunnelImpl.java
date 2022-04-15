@@ -40,7 +40,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
 /**
- * MetricGatewayImpl
+ * 指标通道实现类
  *
  * @author Frank Zhang
  * @date 2020-07-02 12:20 PM
@@ -79,7 +79,7 @@ public class MetricTunnelImpl implements MetricTunnel {
 
 
     @Override
-    public List<SubMetric> listByTechContribution(String userId) {
+    public List<SubMetric> listTechContributionMetric(String userId) {
         List<MetricDO> metricDOList = metricMapper.listByMainMetric(userId,
             MainMetricType.TECH_CONTRIBUTION.getMetricCode());
         RefactoringMetric refactoringMetric = new RefactoringMetric();
@@ -109,7 +109,7 @@ public class MetricTunnelImpl implements MetricTunnel {
     }
 
     @Override
-    public List<SubMetric> listByTechInfluence(String userId) {
+    public List<SubMetric> listTechInfluenceMetric(String userId) {
         List<MetricDO> metricDOList = metricMapper.listByMainMetric(userId,
             MainMetricType.TECH_INFLUENCE.getMetricCode());
         ATAMetric ataMetric = new ATAMetric();
