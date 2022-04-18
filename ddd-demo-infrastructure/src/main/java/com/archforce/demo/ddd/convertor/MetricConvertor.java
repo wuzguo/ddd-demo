@@ -3,11 +3,13 @@ package com.archforce.demo.ddd.convertor;
 
 import com.archforce.demo.ddd.domain.metrics.MetricItem;
 import com.archforce.demo.ddd.tunnel.database.dataobject.MetricDO;
+import lombok.experimental.UtilityClass;
 
 /**
- * @author frankzhang
+ * @author zak
  */
 
+@UtilityClass
 public class MetricConvertor {
 
     public static MetricDO toDataObject(MetricItem metricItem) {

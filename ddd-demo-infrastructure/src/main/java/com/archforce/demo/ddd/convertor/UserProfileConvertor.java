@@ -4,8 +4,11 @@ import com.archforce.demo.ddd.domain.enums.RoleEnum;
 import com.archforce.demo.ddd.domain.user.UserProfile;
 import com.archforce.demo.ddd.dto.clientobject.UserProfileCO;
 import com.archforce.demo.ddd.tunnel.database.dataobject.UserProfileDO;
+import lombok.experimental.UtilityClass;
 import org.springframework.beans.BeanUtils;
 
+
+@UtilityClass
 public class UserProfileConvertor {
 
     public static UserProfile toEntity(UserProfileCO userProfileCO) {
