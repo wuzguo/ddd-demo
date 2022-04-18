@@ -7,6 +7,7 @@ import com.archforce.demo.ddd.domain.metrics.SubMetricTypeEnum;
 
 /**
  * BUG数指标
+ * @author Zak
  */
 
 public class BugMetric extends SubMetric {

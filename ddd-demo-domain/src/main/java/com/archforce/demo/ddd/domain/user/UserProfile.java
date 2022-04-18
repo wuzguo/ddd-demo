@@ -110,43 +110,57 @@ public class UserProfile extends EntityObject {
      */
     private DevQualityMetric devQualityMetric;
 
+    /**
+     * 最大值
+     */
     private static final double MAX_MUM_SCORE = 100;
 
+    /**
+     * 最小值
+     */
     private static final double MIN_MUM_SCORE = 0;
 
     public UserProfile(String userId) {
         this.userId = userId;
     }
 
+    /**
+     * 计算分数
+     */
     public void calculateScore() {
-        calculateTechInfluenceScore();
-        calculateTechContributionScore();
-        calculateDevQualityMetric();
-        calculateAppQualityMetric();
-        calculateTotalScore();
+        // 影响力
+        calcTechInfluenceScore();
+        // 贡献度
+        calcTechContributionScore();
+        // 开发质量
+        calcDevQualityMetric();
+        // APP质量
+        calcAppQualityMetric();
+        // 总分
+        calcTotalScore();
     }
 
-    private void calculateAppQualityMetric() {
+    private void calcAppQualityMetric() {
         Assert.notNull(appQualityMetric, "appQualityMetric is null, initialize it before calculating");
         appQualityScore = appQualityMetric.calculateScore();
     }
 
-    private void calculateDevQualityMetric() {
+    private void calcDevQualityMetric() {
         Assert.notNull(devQualityMetric, "devQualityMetric is null, initialize it before calculating");
         devQualityScore = devQualityMetric.calculateScore();
     }
 
-    private void calculateTechInfluenceScore() {
+    private void calcTechInfluenceScore() {
         Assert.notNull(influenceMetric, "influenceMetric is null, initialize it before calculating");
         techInfluenceScore = influenceMetric.calculateScore();
     }
 
-    private void calculateTechContributionScore() {
+    private void calcTechContributionScore() {
         Assert.notNull(contributionMetric, "contributionMetric is null, initialize it before calculating");
         techContributionScore = contributionMetric.calculateScore();
     }
 
-    private void calculateTotalScore() {
+    private void calcTotalScore() {
         totalScore = round(this.techInfluenceScore) * influenceMetric.getWeight()
             + round(this.techContributionScore) * contributionMetric.getWeight()
             + round(this.devQualityScore) * devQualityMetric.getWeight()

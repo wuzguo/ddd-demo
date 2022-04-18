@@ -13,8 +13,8 @@ public class AppQualityMetric extends MainMetric {
 
     private AppMetric appMetric;
 
-    public AppQualityMetric(UserProfile metricOwner) {
-        this.metricOwner = metricOwner;
+    public AppQualityMetric(UserProfile userProfile) {
+        this.metricOwner = userProfile;
         metricOwner.setAppQualityMetric(this);
         this.metricMainType = MainMetricType.APP_QUALITY;
     }
