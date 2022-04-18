@@ -2,7 +2,7 @@ package com.archforce.demo.ddd.domain;
 
 import com.archforce.demo.ddd.domain.metrics.techinfluence.ATAMetric;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.ATAMetricItem;
-import com.archforce.demo.ddd.domain.metrics.techinfluence.InfluenceMetric;
+import com.archforce.demo.ddd.domain.metrics.techinfluence.TechInfluenceMetric;
 import com.archforce.demo.ddd.domain.user.UserProfile;
 import org.junit.Assert;
 import org.junit.Test;
@@ -40,7 +40,7 @@ public class ATAMetricTest {
         ataMetricItem.setUrl("sharingLink");
         ataMetricItem.setFavoriteCount(1000);
         ataMetricItem.setCommentCount(203);
-        ataMetricItem.setSubMetric(new ATAMetric(new InfluenceMetric(new UserProfile("78492"))));
+        ataMetricItem.setSubMetric(new ATAMetric(new TechInfluenceMetric(new UserProfile("78492"))));
 
         String jsonStr = ataMetricItem.toJsonString();
         ATAMetricItem jsonObject = ATAMetricItem.valueOf(jsonStr);
@@ -55,7 +55,7 @@ public class ATAMetricTest {
 
     @Test
     public void testATAMetric() {
-        ATAMetric ataMetric = new ATAMetric(new InfluenceMetric(new UserProfile()));
+        ATAMetric ataMetric = new ATAMetric(new TechInfluenceMetric(new UserProfile()));
         ataMetric.addMetricItem(new ATAMetricItem("article", 19, 99, 14, 2));
         ataMetric.addMetricItem(new ATAMetricItem("article", 20, 100, 15, 3));
         ataMetric.addMetricItem(new ATAMetricItem("article", 100, 500, 75, 15));

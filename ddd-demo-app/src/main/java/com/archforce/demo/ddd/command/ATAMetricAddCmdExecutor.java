@@ -3,7 +3,7 @@ package com.archforce.demo.ddd.command;
 import com.alibaba.cola.dto.Response;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.ATAMetric;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.ATAMetricItem;
-import com.archforce.demo.ddd.domain.metrics.techinfluence.InfluenceMetric;
+import com.archforce.demo.ddd.domain.metrics.techinfluence.TechInfluenceMetric;
 import com.archforce.demo.ddd.domain.tunnel.MetricTunnel;
 import com.archforce.demo.ddd.domain.user.UserProfile;
 import com.archforce.demo.ddd.dto.ATAMetricAddCmd;
@@ -28,7 +28,7 @@ public class ATAMetricAddCmdExecutor {
         ATAMetricItem ataMetricItem = new ATAMetricItem();
         BeanUtils.copyProperties(cmd.getAtaMetric(), ataMetricItem);
         ataMetricItem.setSubMetric(
-            new ATAMetric(new InfluenceMetric(new UserProfile(cmd.getAtaMetric().getOwnerId()))));
+            new ATAMetric(new TechInfluenceMetric(new UserProfile(cmd.getAtaMetric().getOwnerId()))));
         metricTunnel.save(ataMetricItem);
         return Response.buildSuccess();
     }

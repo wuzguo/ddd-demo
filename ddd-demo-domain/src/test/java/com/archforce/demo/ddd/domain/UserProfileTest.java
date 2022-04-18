@@ -9,8 +9,8 @@ import com.archforce.demo.ddd.domain.metrics.devquality.BugMetricItem;
 import com.archforce.demo.ddd.domain.metrics.devquality.DevQualityMetric;
 import com.archforce.demo.ddd.domain.metrics.techcontribution.CodeReviewMetric;
 import com.archforce.demo.ddd.domain.metrics.techcontribution.CodeReviewMetricItem;
-import com.archforce.demo.ddd.domain.metrics.techcontribution.ContributionMetric;
-import com.archforce.demo.ddd.domain.metrics.techinfluence.InfluenceMetric;
+import com.archforce.demo.ddd.domain.metrics.techcontribution.TechContributionMetric;
+import com.archforce.demo.ddd.domain.metrics.techinfluence.TechInfluenceMetric;
 import com.archforce.demo.ddd.domain.metrics.weight.DevWeight;
 import com.archforce.demo.ddd.domain.user.UserProfile;
 import org.junit.Assert;
@@ -54,7 +54,7 @@ public class UserProfileTest {
         appMetric.setParent(appQualityMetric);
 
         //influence Metric
-        InfluenceMetric influenceMetric = new InfluenceMetric(userProfile);
+        TechInfluenceMetric influenceMetric = new TechInfluenceMetric(userProfile);
         InfluenceMetricTest.prepareSubMetrics(influenceMetric);
 
         //techContribution Metric
@@ -63,7 +63,7 @@ public class UserProfileTest {
         codeReviewMetricItem.setNoteCount(4);
         codeReviewMetricItem.setReviewId("12234455");
         codeReviewMetric.addMetricItem(codeReviewMetricItem);
-        ContributionMetric contributionMetric = new ContributionMetric(userProfile);
+        TechContributionMetric contributionMetric = new TechContributionMetric(userProfile);
 
         //dev quality metric
         DevQualityMetric devQualityMetric = new DevQualityMetric(userProfile);

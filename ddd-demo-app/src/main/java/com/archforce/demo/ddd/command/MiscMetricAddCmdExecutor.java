@@ -2,7 +2,7 @@ package com.archforce.demo.ddd.command;
 
 import com.alibaba.cola.dto.Response;
 import com.archforce.demo.ddd.domain.tunnel.MetricTunnel;
-import com.archforce.demo.ddd.domain.metrics.techcontribution.ContributionMetric;
+import com.archforce.demo.ddd.domain.metrics.techcontribution.TechContributionMetric;
 import com.archforce.demo.ddd.domain.metrics.techcontribution.MiscMetric;
 import com.archforce.demo.ddd.domain.metrics.techcontribution.MiscMetricItem;
 import com.archforce.demo.ddd.domain.user.UserProfile;
@@ -27,7 +27,7 @@ public class MiscMetricAddCmdExecutor {
         MiscMetricItem miscMetricItem = new MiscMetricItem();
         BeanUtils.copyProperties(cmd.getMiscMetric(), miscMetricItem);
         miscMetricItem.setSubMetric(
-            new MiscMetric(new ContributionMetric(new UserProfile(cmd.getMiscMetric().getOwnerId()))));
+            new MiscMetric(new TechContributionMetric(new UserProfile(cmd.getMiscMetric().getOwnerId()))));
         metricTunnel.save(miscMetricItem);
         return Response.buildSuccess();
     }

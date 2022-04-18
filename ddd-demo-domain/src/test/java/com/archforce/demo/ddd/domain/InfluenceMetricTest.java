@@ -3,7 +3,7 @@ package com.archforce.demo.ddd.domain;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.ATAMetric;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.ATAMetricItem;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.AuthorType;
-import com.archforce.demo.ddd.domain.metrics.techinfluence.InfluenceMetric;
+import com.archforce.demo.ddd.domain.metrics.techinfluence.TechInfluenceMetric;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.PatentMetric;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.PatentMetricItem;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.SharingMetric;
@@ -22,7 +22,7 @@ public class InfluenceMetricTest {
     public void testDevScore() {
         UserProfile userProfile = new UserProfile();
         userProfile.setWeight(new DevWeight());
-        InfluenceMetric influenceMetric = new InfluenceMetric(userProfile);
+        TechInfluenceMetric influenceMetric = new TechInfluenceMetric(userProfile);
         prepareSubMetrics(influenceMetric);
 
         Assert.assertEquals(124.5, influenceMetric.calculateScore(), 0.01);
@@ -32,13 +32,13 @@ public class InfluenceMetricTest {
     public void testQAScore() {
         UserProfile userProfile = new UserProfile();
         userProfile.setWeight(new QAWeight());
-        InfluenceMetric influenceMetric = new InfluenceMetric(userProfile);
+        TechInfluenceMetric influenceMetric = new TechInfluenceMetric(userProfile);
         prepareSubMetrics(influenceMetric);
 
         Assert.assertEquals(124.5, influenceMetric.calculateScore(), 0.01);
     }
 
-    public static void prepareSubMetrics(InfluenceMetric influenceMetric) {
+    public static void prepareSubMetrics(TechInfluenceMetric influenceMetric) {
         ATAMetric ataMetric = new ATAMetric(influenceMetric);
         ataMetric.addMetricItem(new ATAMetricItem("article", 19, 99, 14, 2));
         ataMetric.addMetricItem(new ATAMetricItem("article", 20, 100, 15, 3));

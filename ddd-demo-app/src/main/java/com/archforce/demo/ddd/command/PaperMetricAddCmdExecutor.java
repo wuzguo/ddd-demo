@@ -1,7 +1,7 @@
 package com.archforce.demo.ddd.command;
 
 import com.alibaba.cola.dto.Response;
-import com.archforce.demo.ddd.domain.metrics.techinfluence.InfluenceMetric;
+import com.archforce.demo.ddd.domain.metrics.techinfluence.TechInfluenceMetric;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.PaperMetric;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.PaperMetricItem;
 import com.archforce.demo.ddd.domain.tunnel.MetricTunnel;
@@ -27,7 +27,7 @@ public class PaperMetricAddCmdExecutor {
         PaperMetricItem paperMetricItem = new PaperMetricItem();
         BeanUtils.copyProperties(cmd.getPaperMetric(), paperMetricItem);
         paperMetricItem.setSubMetric(
-            new PaperMetric(new InfluenceMetric(new UserProfile(cmd.getPaperMetric().getOwnerId()))));
+            new PaperMetric(new TechInfluenceMetric(new UserProfile(cmd.getPaperMetric().getOwnerId()))));
         paperMetricItem.setMetricOwner(new UserProfile(cmd.getPaperMetric().getOwnerId()));
         metricTunnel.save(paperMetricItem);
 

@@ -1,7 +1,7 @@
 package com.archforce.demo.ddd.command;
 
 import com.alibaba.cola.dto.Response;
-import com.archforce.demo.ddd.domain.metrics.techcontribution.ContributionMetric;
+import com.archforce.demo.ddd.domain.metrics.techcontribution.TechContributionMetric;
 import com.archforce.demo.ddd.domain.metrics.techcontribution.RefactoringLevel;
 import com.archforce.demo.ddd.domain.metrics.techcontribution.RefactoringMetric;
 import com.archforce.demo.ddd.domain.metrics.techcontribution.RefactoringMetricItem;
@@ -28,7 +28,7 @@ public class RefactoringMetricAddCmdExecutor {
         RefactoringMetricItem refactoringMetricItem = new RefactoringMetricItem();
         BeanUtils.copyProperties(cmd.getRefactoringMetric(), refactoringMetricItem);
         refactoringMetricItem.setSubMetric(
-            new RefactoringMetric(new ContributionMetric(new UserProfile(cmd.getRefactoringMetric().getOwnerId()))));
+            new RefactoringMetric(new TechContributionMetric(new UserProfile(cmd.getRefactoringMetric().getOwnerId()))));
         refactoringMetricItem.setRefactoringLevel(
             RefactoringLevel.valueOf(cmd.getRefactoringMetric().getRefactoringLevel()));
         metricTunnel.save(refactoringMetricItem);

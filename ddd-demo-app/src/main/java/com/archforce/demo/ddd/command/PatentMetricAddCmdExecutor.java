@@ -3,7 +3,7 @@ package com.archforce.demo.ddd.command;
 import com.alibaba.cola.dto.Response;
 import com.archforce.demo.ddd.domain.tunnel.MetricTunnel;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.AuthorType;
-import com.archforce.demo.ddd.domain.metrics.techinfluence.InfluenceMetric;
+import com.archforce.demo.ddd.domain.metrics.techinfluence.TechInfluenceMetric;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.PatentMetric;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.PatentMetricItem;
 import com.archforce.demo.ddd.domain.user.UserProfile;
@@ -28,7 +28,7 @@ public class PatentMetricAddCmdExecutor {
         PatentMetricItem patentMetricItem = new PatentMetricItem();
         BeanUtils.copyProperties(cmd.getPatentMetric(), patentMetricItem);
         patentMetricItem.setSubMetric(
-            new PatentMetric(new InfluenceMetric(new UserProfile(cmd.getPatentMetric().getOwnerId()))));
+            new PatentMetric(new TechInfluenceMetric(new UserProfile(cmd.getPatentMetric().getOwnerId()))));
         patentMetricItem.setAuthorType(AuthorType.valueOf(cmd.getPatentMetric().getAuthorType()));
         metricTunnel.save(patentMetricItem);
         return Response.buildSuccess();

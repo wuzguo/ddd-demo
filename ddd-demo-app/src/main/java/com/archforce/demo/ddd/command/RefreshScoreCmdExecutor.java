@@ -7,8 +7,8 @@ import com.archforce.demo.ddd.domain.metrics.appquality.AppMetric;
 import com.archforce.demo.ddd.domain.metrics.appquality.AppQualityMetric;
 import com.archforce.demo.ddd.domain.metrics.devquality.BugMetric;
 import com.archforce.demo.ddd.domain.metrics.devquality.DevQualityMetric;
-import com.archforce.demo.ddd.domain.metrics.techcontribution.ContributionMetric;
-import com.archforce.demo.ddd.domain.metrics.techinfluence.InfluenceMetric;
+import com.archforce.demo.ddd.domain.metrics.techcontribution.TechContributionMetric;
+import com.archforce.demo.ddd.domain.metrics.techinfluence.TechInfluenceMetric;
 import com.archforce.demo.ddd.domain.tunnel.MetricTunnel;
 import com.archforce.demo.ddd.domain.tunnel.UserProfileTunnel;
 import com.archforce.demo.ddd.domain.user.UserProfile;
@@ -62,13 +62,13 @@ public class RefreshScoreCmdExecutor {
     }
 
     private void loadContributionMetrics(UserProfile userProfile) {
-        ContributionMetric contributionMetric = new ContributionMetric(userProfile);
+        TechContributionMetric contributionMetric = new TechContributionMetric(userProfile);
         List<SubMetric> subMetricList = metricTunnel.listTechContributionMetric(userProfile.getUserId());
         subMetricList.forEach(subMetric -> subMetric.setParent(contributionMetric));
     }
 
     private void loadInfluenceMetric(UserProfile userProfile) {
-        InfluenceMetric influenceMetric = new InfluenceMetric(userProfile);
+        TechInfluenceMetric influenceMetric = new TechInfluenceMetric(userProfile);
         List<SubMetric> subMetricList = metricTunnel.listTechInfluenceMetric(userProfile.getUserId());
         subMetricList.forEach(subMetric -> subMetric.setParent(influenceMetric));
     }

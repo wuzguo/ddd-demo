@@ -1,6 +1,6 @@
 package com.archforce.demo.ddd.domain;
 
-import com.archforce.demo.ddd.domain.metrics.techinfluence.InfluenceMetric;
+import com.archforce.demo.ddd.domain.metrics.techinfluence.TechInfluenceMetric;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.SharingMetric;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.SharingMetricItem;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.SharingScopeEnum;
@@ -19,7 +19,7 @@ public class SharingMetricTest {
 
     @Test
     public void testSharingMetric() {
-        SharingMetric sharingMetric = new SharingMetric(new InfluenceMetric(new UserProfile()));
+        SharingMetric sharingMetric = new SharingMetric(new TechInfluenceMetric(new UserProfile()));
         sharingMetric.addMetricItem(new SharingMetricItem("title", SharingScopeEnum.TEAM, new Date(), "sharingLink"));
         sharingMetric.addMetricItem(new SharingMetricItem("title", SharingScopeEnum.BU, new Date(), "sharingLink"));
         sharingMetric.addMetricItem(new SharingMetricItem("title", SharingScopeEnum.GROUP, new Date(), "sharingLink"));

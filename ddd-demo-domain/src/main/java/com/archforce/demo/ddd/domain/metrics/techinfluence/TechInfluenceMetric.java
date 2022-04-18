@@ -15,7 +15,7 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class InfluenceMetric extends MainMetric {
+public class TechInfluenceMetric extends MainMetric {
 
     private ATAMetric ataMetric;
 
@@ -25,7 +25,7 @@ public class InfluenceMetric extends MainMetric {
 
     private PaperMetric paperMetric;
 
-    public InfluenceMetric(UserProfile metricOwner) {
+    public TechInfluenceMetric(UserProfile metricOwner) {
         this.metricOwner = metricOwner;
         metricOwner.setInfluenceMetric(this);
         this.metricMainType = MainMetricType.TECH_INFLUENCE;

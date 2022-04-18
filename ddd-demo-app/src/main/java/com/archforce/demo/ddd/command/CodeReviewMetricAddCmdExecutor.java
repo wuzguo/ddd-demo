@@ -3,7 +3,7 @@ package com.archforce.demo.ddd.command;
 import com.alibaba.cola.dto.Response;
 import com.archforce.demo.ddd.domain.metrics.techcontribution.CodeReviewMetric;
 import com.archforce.demo.ddd.domain.metrics.techcontribution.CodeReviewMetricItem;
-import com.archforce.demo.ddd.domain.metrics.techcontribution.ContributionMetric;
+import com.archforce.demo.ddd.domain.metrics.techcontribution.TechContributionMetric;
 import com.archforce.demo.ddd.domain.tunnel.MetricTunnel;
 import com.archforce.demo.ddd.domain.user.UserProfile;
 import com.archforce.demo.ddd.dto.CodeReviewMetricAddCmd;
@@ -27,7 +27,7 @@ public class CodeReviewMetricAddCmdExecutor {
         CodeReviewMetricItem codeReviewMetricItem = new CodeReviewMetricItem();
         BeanUtils.copyProperties(cmd, codeReviewMetricItem);
         codeReviewMetricItem.setSubMetric(
-            new CodeReviewMetric(new ContributionMetric(new UserProfile(cmd.getOwnerId()))));
+            new CodeReviewMetric(new TechContributionMetric(new UserProfile(cmd.getOwnerId()))));
         metricTunnel.save(codeReviewMetricItem);
         return Response.buildSuccess();
     }

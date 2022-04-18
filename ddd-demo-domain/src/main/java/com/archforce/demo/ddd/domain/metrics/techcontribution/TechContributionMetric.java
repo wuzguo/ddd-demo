@@ -4,6 +4,7 @@ import com.archforce.demo.ddd.domain.metrics.MainMetric;
 import com.archforce.demo.ddd.domain.metrics.MainMetricType;
 import com.archforce.demo.ddd.domain.user.UserProfile;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -15,13 +16,16 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Data
-public class ContributionMetric extends MainMetric {
+@EqualsAndHashCode(callSuper = true)
+public class TechContributionMetric extends MainMetric {
 
     private CodeReviewMetric codeReviewMetric;
+
     private RefactoringMetric refactoringMetric;
+
     private MiscMetric miscMetric;
 
-    public ContributionMetric(UserProfile metricOwner) {
+    public TechContributionMetric(UserProfile metricOwner) {
         this.metricOwner = metricOwner;
         metricOwner.setContributionMetric(this);
         this.metricMainType = MainMetricType.TECH_CONTRIBUTION;

@@ -1,7 +1,7 @@
 package com.archforce.demo.ddd.domain;
 
 import com.archforce.demo.ddd.domain.metrics.techinfluence.AuthorType;
-import com.archforce.demo.ddd.domain.metrics.techinfluence.InfluenceMetric;
+import com.archforce.demo.ddd.domain.metrics.techinfluence.TechInfluenceMetric;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.PatentMetric;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.PatentMetricItem;
 import com.archforce.demo.ddd.domain.user.UserProfile;
@@ -18,7 +18,7 @@ public class PatentMetricTest {
 
     @Test
     public void testPatentMetric() {
-        PatentMetric patentMetric = new PatentMetric(new InfluenceMetric(new UserProfile()));
+        PatentMetric patentMetric = new PatentMetric(new TechInfluenceMetric(new UserProfile()));
         patentMetric.addMetricItem(
             new PatentMetricItem("patentName", "patentDesc", "patentNo", "sharingLink", AuthorType.FIRST_AUTHOR));
         patentMetric.addMetricItem(

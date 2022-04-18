@@ -26,6 +26,8 @@ public interface UserProfileTunnel {
     void update(UserProfile userProfile);
 
     /**
+     * 获取用户信息
+     *
      * @param userId 用户ID
      * @return {@link UserProfile}
      */
