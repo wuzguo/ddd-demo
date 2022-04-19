@@ -43,7 +43,7 @@ public abstract class MetricItem extends EntityObject implements Measurable {
      * @return {@link String}
      */
     public String toJsonString() {
-        String jsonStr = JSON.toJSONString(this, JSONPropertyFilter.singleton);
+        String jsonStr = JSON.toJSONString(this);
         log.debug("\n From : " + this + " \n To: " + jsonStr);
         return jsonStr;
     }

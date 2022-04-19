@@ -14,11 +14,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.6.6</spring-boot.version>
-        <cola.version>3.1.0</cola.version>
+        <cola.version>3.0.0</cola.version>
         <commons-lang3.version>3.1</commons-lang3.version>
         <fastjson.version>2.0.1</fastjson.version>
-        <guava.version>31.1-jre</guava.version>
-        <swagger.version>2.1.13</swagger.version>
+        <guava.version>28.1-jre</guava.version>
+        <swagger.version>2.9.2</swagger.version>
         <mybatis.starter.version>2.1.4</mybatis.starter.version>
     </properties>
 
@@ -66,13 +66,13 @@
                 <version>${guava.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.swagger.core.v3</groupId>
-                <artifactId>swagger-annotations</artifactId>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
                 <version>${swagger.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.swagger.core.v3</groupId>
-                <artifactId>swagger-core</artifactId>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-bean-validators</artifactId>
                 <version>${swagger.version}</version>
             </dependency>
             <dependency>

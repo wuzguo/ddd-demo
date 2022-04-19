@@ -24,6 +24,10 @@
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>cola-core</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
