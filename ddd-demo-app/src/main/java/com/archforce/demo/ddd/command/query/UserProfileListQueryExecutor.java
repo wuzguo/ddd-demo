@@ -5,6 +5,7 @@ import com.archforce.demo.ddd.dto.UserProfileListQuery;
 import com.archforce.demo.ddd.dto.clientobject.UserProfileCO;
 import com.archforce.demo.ddd.tunnel.database.UserProfileMapper;
 import com.archforce.demo.ddd.tunnel.database.dataobject.UserProfileDO;
+import com.google.common.collect.Lists;
 import java.util.List;
 import javax.annotation.Resource;
 import org.springframework.beans.BeanUtils;

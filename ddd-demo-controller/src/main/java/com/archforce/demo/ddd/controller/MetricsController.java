@@ -24,21 +24,21 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @Validated
 @RestController
-@RequestMapping("/api")
-@Api(tags = "客户资料表")
+@RequestMapping("/api/metrics")
+@Api(tags = "指标信息表")
 public class MetricsController {
 
     @Resource
     private IMetricsService metricsService;
 
-    @GetMapping(value = "/metrics/ata")
+    @GetMapping(value = "/ata")
     public MultiResponse<ATAMetricCO> listATAMetrics(@RequestParam String ownerId) {
         ATAMetricQuery ataMetricQuery = new ATAMetricQuery();
         ataMetricQuery.setOwnerId(ownerId);
         return metricsService.listATAMetrics(ataMetricQuery);
     }
 
-    @PostMapping(value = "/metrics/ata")
+    @PostMapping(value = "/ata")
     public Response addATAMetric(@RequestBody ATAMetricAddCmd ataMetricAddCmd) {
         return metricsService.addATAMetric(ataMetricAddCmd);
     }

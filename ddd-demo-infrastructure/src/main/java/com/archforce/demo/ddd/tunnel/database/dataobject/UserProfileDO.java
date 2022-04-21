@@ -38,32 +38,32 @@ public class UserProfileDO extends BaseDO {
     /**
      * 综合得分
      */
-    private double totalScore;
+    private Double totalScore;
 
     /**
      * 代码质量分
      */
-    private double appQualityScore;
+    private Double appQualityScore;
 
     /**
      * 技术影响力分
      */
-    private double techInfluenceScore;
+    private Double techInfluenceScore;
 
     /**
      * 技术贡献分
      */
-    private double techContributionScore;
+    private Double techContributionScore;
 
     /**
      * 开发质量分
      */
-    private double devQualityScore;
+    private Double devQualityScore;
 
     /**
      * checkin代码量
      */
-    private double checkinCodeQuantity;
+    private Double codeReviewQuantity;
 
     public String getUserId() {
         return userId;
@@ -105,51 +105,68 @@ public class UserProfileDO extends BaseDO {
         this.isManager = isManager;
     }
 
-    public double getTotalScore() {
+    public Double getTotalScore() {
         return totalScore;
     }
 
-    public void setTotalScore(double totalScore) {
+    public void setTotalScore(Double totalScore) {
         this.totalScore = totalScore;
     }
 
-    public double getAppQualityScore() {
+    public Double getAppQualityScore() {
         return appQualityScore;
     }
 
-    public void setAppQualityScore(double appQualityScore) {
+    public void setAppQualityScore(Double appQualityScore) {
         this.appQualityScore = appQualityScore;
     }
 
-    public double getTechInfluenceScore() {
+    public Double getTechInfluenceScore() {
         return techInfluenceScore;
     }
 
-    public void setTechInfluenceScore(double techInfluenceScore) {
+    public void setTechInfluenceScore(Double techInfluenceScore) {
         this.techInfluenceScore = techInfluenceScore;
     }
 
-    public double getTechContributionScore() {
+    public Double getTechContributionScore() {
         return techContributionScore;
     }
 
-    public void setTechContributionScore(double techContributionScore) {
+    public void setTechContributionScore(Double techContributionScore) {
         this.techContributionScore = techContributionScore;
     }
 
-    public double getDevQualityScore() {
+    public Double getDevQualityScore() {
         return devQualityScore;
     }
 
-    public void setDevQualityScore(double devQualityScore) {
+    public void setDevQualityScore(Double devQualityScore) {
         this.devQualityScore = devQualityScore;
     }
 
-    public double getCheckinCodeQuantity() {
-        return checkinCodeQuantity;
+    public Double getCodeReviewQuantity() {
+        return codeReviewQuantity;
     }
 
-    public void setCheckinCodeQuantity(double checkinCodeQuantity) {
-        this.checkinCodeQuantity = checkinCodeQuantity;
+    public void setCodeReviewQuantity(Double codeReviewQuantity) {
+        this.codeReviewQuantity = codeReviewQuantity;
+    }
+
+    @Override
+    public String toString() {
+        return "UserProfileDO{" +
+            "userId='" + userId + '\'' +
+            ", userName='" + userName + '\'' +
+            ", dep='" + dep + '\'' +
+            ", role='" + role + '\'' +
+            ", isManager='" + isManager + '\'' +
+            ", totalScore=" + totalScore +
+            ", appQualityScore=" + appQualityScore +
+            ", techInfluenceScore=" + techInfluenceScore +
+            ", techContributionScore=" + techContributionScore +
+            ", devQualityScore=" + devQualityScore +
+            ", codeReviewQuantity=" + codeReviewQuantity +
+            '}';
     }
 }

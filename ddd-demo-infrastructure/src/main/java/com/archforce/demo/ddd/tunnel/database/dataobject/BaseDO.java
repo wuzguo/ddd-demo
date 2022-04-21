@@ -26,4 +26,12 @@ public class BaseDO {
     public void setModifier(String modifier) {
         this.modifier = modifier;
     }
+
+    @Override
+    public String toString() {
+        return "BaseDO{" +
+            "creator='" + creator + '\'' +
+            ", modifier='" + modifier + '\'' +
+            '}';
+    }
 }

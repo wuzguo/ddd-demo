@@ -1,6 +1,10 @@
 package com.archforce.demo.ddd.tunnel.database.dataobject;
 
 
+/**
+ * @author Zak
+ */
+
 public class MetricDO extends BaseDO {
 
     private String id;
@@ -59,5 +63,16 @@ public class MetricDO extends BaseDO {
 
     public void setMetricItem(String metricItem) {
         this.metricItem = metricItem;
+    }
+
+    @Override
+    public String toString() {
+        return "MetricDO{" +
+            "id='" + id + '\'' +
+            ", userId='" + userId + '\'' +
+            ", mainMetric='" + mainMetric + '\'' +
+            ", subMetric='" + subMetric + '\'' +
+            ", metricItem='" + metricItem + '\'' +
+            '}';
     }
 }

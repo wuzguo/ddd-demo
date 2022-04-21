@@ -77,5 +77,5 @@ public class UserProfileCO extends ClientObject {
     /**
      * checkin代码量
      */
-    private double checkinCodeQuantity;
+    private double codeReviewQuantity;
 }

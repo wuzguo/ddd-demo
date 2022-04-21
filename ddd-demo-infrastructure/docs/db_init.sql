@@ -30,7 +30,7 @@ CREATE TABLE `user_profile`
     `tech_influence_score`    decimal(10, 2) NOT NULL DEFAULT '0.00' COMMENT '技术影响力分',
     `tech_contribution_score` decimal(10, 2) NOT NULL DEFAULT '0.00' COMMENT '技术贡献分',
     `dev_quality_score`       decimal(10, 2) NOT NULL DEFAULT '0.00' COMMENT '开发质量分',
-    `checkin_code_quantity`   decimal(9, 2)  NOT NULL DEFAULT '0.00' COMMENT 'checkin代码量',
+    `code_review_quantity`   decimal(9, 2)  NOT NULL DEFAULT '0.00' COMMENT '代码审查代码量',
     `is_manager`              char(1)                 DEFAULT NULL COMMENT '是否主管',
     `creator`                 varchar(64)    NOT NULL COMMENT '创建人',
     `modifier`                varchar(64)    NOT NULL COMMENT '修改人',

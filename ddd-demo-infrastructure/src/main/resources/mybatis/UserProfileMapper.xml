@@ -16,7 +16,7 @@
         tech_influence_score,
         tech_contribution_score,
         dev_quality_score,
-        checkin_code_quantity,
+        code_review_quantity,
         creator,
         modifier,
         gmt_create,
@@ -45,7 +45,7 @@
         #{techInfluenceScore},
         #{techContributionScore},
         #{devQualityScore},
-        #{checkinCodeQuantity},
+        #{codeReviewQuantity},
         #{creator},
         #{modifier},
         now(),
@@ -104,8 +104,8 @@
         <if test="devQualityScore != null and devQualityScore != 0">
             ,dev_quality_score = #{devQualityScore}
         </if>
-        <if test="checkinCodeQuantity != null and checkinCodeQuantity != 0">
-            ,checkin_code_quantity = #{checkinCodeQuantity}
+        <if test="codeReviewQuantity != null and codeReviewQuantity != 0">
+            ,code_review_quantity = #{codeReviewQuantity}
         </if>
         <if test="modifier != null">
             ,modifier = #{modifier}
