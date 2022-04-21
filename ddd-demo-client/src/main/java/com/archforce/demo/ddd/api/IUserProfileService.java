@@ -48,7 +48,7 @@ public interface IUserProfileService {
      * @param qry {@link UserProfileGetQuery}
      * @return {@link UserProfileCO}
      */
-    SingleResponse<UserProfileCO> getUserProfileBy(UserProfileGetQuery qry);
+    SingleResponse<UserProfileCO> getUserProfile(UserProfileGetQuery qry);
 
 
     /**

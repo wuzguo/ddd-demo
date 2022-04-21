@@ -4,6 +4,9 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 
+/**
+ * @author Zak
+ */
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class UserProfileListQuery extends CommonCommand {

@@ -58,7 +58,7 @@ public class UserProfileServiceImpl implements IUserProfileService {
     }
 
     @Override
-    public SingleResponse<UserProfileCO> getUserProfileBy(UserProfileGetQuery qry) {
+    public SingleResponse<UserProfileCO> getUserProfile(UserProfileGetQuery qry) {
         return userProfileGetQueryExecutor.execute(qry);
     }
 
