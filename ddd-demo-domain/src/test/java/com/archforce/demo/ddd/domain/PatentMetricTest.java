@@ -1,9 +1,9 @@
 package com.archforce.demo.ddd.domain;
 
 import com.archforce.demo.ddd.domain.metrics.techinfluence.AuthorType;
-import com.archforce.demo.ddd.domain.metrics.techinfluence.TechInfluenceMetric;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.PatentMetric;
 import com.archforce.demo.ddd.domain.metrics.techinfluence.PatentMetricItem;
+import com.archforce.demo.ddd.domain.metrics.techinfluence.TechInfluenceMetric;
 import com.archforce.demo.ddd.domain.user.UserProfile;
 import org.junit.Assert;
 import org.junit.Test;

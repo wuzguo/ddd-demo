@@ -1,7 +1,7 @@
 package com.archforce.demo.ddd.domain.metrics;
 
 import com.archforce.demo.ddd.domain.user.UserProfile;
-import java.util.ArrayList;
+import com.google.common.collect.Lists;
 import java.util.List;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -23,7 +23,7 @@ public abstract class SubMetric extends Metric {
     protected MainMetric parent;
 
     @Getter
-    private List<MetricItem> metricItems = new ArrayList<>();
+    private List<MetricItem> metricItems = Lists.newArrayList();
 
     public SubMetric() {
 

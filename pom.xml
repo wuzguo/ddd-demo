@@ -17,7 +17,7 @@
         <cola.version>3.0.0</cola.version>
         <commons-lang3.version>3.1</commons-lang3.version>
         <fastjson.version>2.0.1</fastjson.version>
-        <guava.version>28.1-jre</guava.version>
+        <guava.version>30.0-android</guava.version>
         <swagger.version>2.9.2</swagger.version>
         <mybatis.starter.version>2.1.4</mybatis.starter.version>
     </properties>

@@ -1,6 +1,6 @@
 package com.archforce.demo.ddd.domain.metrics;
 
-import java.util.ArrayList;
+import com.google.common.collect.Lists;
 import java.util.List;
 import lombok.Data;
 
@@ -16,7 +16,7 @@ public abstract class MainMetric extends Metric {
 
     protected MainMetricType metricMainType;
 
-    protected List<SubMetric> subMetrics = new ArrayList<>();
+    protected List<SubMetric> subMetrics = Lists.newArrayList();
 
     public MainMetric() {
     }

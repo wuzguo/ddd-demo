@@ -7,11 +7,14 @@ import com.archforce.demo.ddd.dto.ATAMetricQuery;
 import com.archforce.demo.ddd.dto.clientobject.ATAMetricCO;
 import com.archforce.demo.ddd.tunnel.database.MetricMapper;
 import com.archforce.demo.ddd.tunnel.database.dataobject.MetricDO;
-import java.util.ArrayList;
+import com.google.common.collect.Lists;
 import java.util.List;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Component;
 
+/**
+ * @author Zak
+ */
 @Component
 public class ATAMetricQueryExecutor {
 
@@ -21,7 +24,7 @@ public class ATAMetricQueryExecutor {
     public MultiResponse<ATAMetricCO> execute(ATAMetricQuery cmd) {
         List<MetricDO> metricDOList = metricMapper.listBySubMetric(cmd.getOwnerId(),
             SubMetricTypeEnum.ATA.getMetricSubTypeCode());
-        List<ATAMetricCO> ataMetricCOList = new ArrayList<>();
+        List<ATAMetricCO> ataMetricCOList = Lists.newArrayList();
         metricDOList.forEach(metricDO -> {
             ATAMetricCO ataMetricCO = JSON.parseObject(metricDO.getMetricItem(), ATAMetricCO.class);
             ataMetricCO.setOwnerId(metricDO.getUserId());

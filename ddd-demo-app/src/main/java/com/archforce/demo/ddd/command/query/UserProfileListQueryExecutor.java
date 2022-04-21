@@ -5,7 +5,6 @@ import com.archforce.demo.ddd.dto.UserProfileListQuery;
 import com.archforce.demo.ddd.dto.clientobject.UserProfileCO;
 import com.archforce.demo.ddd.tunnel.database.UserProfileMapper;
 import com.archforce.demo.ddd.tunnel.database.dataobject.UserProfileDO;
-import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Resource;
 import org.springframework.beans.BeanUtils;
@@ -19,7 +18,7 @@ public class UserProfileListQueryExecutor {
 
     public MultiResponse<UserProfileCO> execute(UserProfileListQuery qry) {
         List<UserProfileDO> userProfileDOList = userProfileMapper.listByDep(qry.getDep());
-        List<UserProfileCO> userProfileCOList = new ArrayList<>();
+        List<UserProfileCO> userProfileCOList = Lists.newArrayList();
         userProfileDOList.forEach(userDO -> {
             UserProfileCO userProfileCO = new UserProfileCO();
             BeanUtils.copyProperties(userDO, userProfileCO);

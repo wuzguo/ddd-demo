@@ -4,7 +4,8 @@
 
 <mapper namespace="com.archforce.demo.ddd.gatewayimpl.database.UserProfileMapper">
     <sql id="ALL_COLUMNS">
-        id,
+        id
+        ,
         user_id,
         user_name,
         is_manager,

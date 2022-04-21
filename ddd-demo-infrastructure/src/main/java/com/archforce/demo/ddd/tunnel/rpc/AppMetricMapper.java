@@ -1,7 +1,6 @@
 package com.archforce.demo.ddd.tunnel.rpc;
 
 import com.archforce.demo.ddd.tunnel.rpc.dataobject.AppMetricDO;
-import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Component;
 
@@ -12,7 +11,7 @@ public class AppMetricMapper {
      * Dummy RPC Call
      */
     public List<AppMetricDO> listByUserId(String userId) {
-        List<AppMetricDO> appMetricDOList = new ArrayList<>();
+        List<AppMetricDO> appMetricDOList = Lists.newArrayList();
         AppMetricDO appMetricDO1 = new AppMetricDO();
         appMetricDO1.setAppName("app1");
         appMetricDO1.setCyclomaticComplexityCount(200);

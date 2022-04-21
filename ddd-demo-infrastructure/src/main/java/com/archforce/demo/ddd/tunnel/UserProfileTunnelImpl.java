@@ -2,9 +2,9 @@ package com.archforce.demo.ddd.tunnel;
 
 import com.archforce.demo.ddd.convertor.UserProfileConvertor;
 import com.archforce.demo.ddd.domain.DomainFactory;
+import com.archforce.demo.ddd.domain.enums.RoleEnum;
 import com.archforce.demo.ddd.domain.metrics.weight.WeightFactory;
 import com.archforce.demo.ddd.domain.tunnel.UserProfileTunnel;
-import com.archforce.demo.ddd.domain.enums.RoleEnum;
 import com.archforce.demo.ddd.domain.user.UserProfile;
 import com.archforce.demo.ddd.tunnel.database.UserProfileMapper;
 import com.archforce.demo.ddd.tunnel.database.dataobject.UserProfileDO;

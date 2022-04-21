@@ -4,7 +4,8 @@
 
 <mapper namespace="com.archforce.demo.ddd.gatewayimpl.database.MetricMapper">
     <sql id="ALL_COLUMNS">
-        id,
+        id
+        ,
         user_id,
         main_metric,
         sub_metric,
